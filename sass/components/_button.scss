@@ -1,0 +1,39 @@
+.vm-button {
+  display: inline-block;
+  min-width: 201px;
+  padding: 1rem 2.5rem;
+
+  @include font(0.9375rem, 400, 1.25rem);
+
+  background: $cl-primary-main;
+  border: 0;
+  border-radius: $br-200;
+  color: $cl-text-primary;
+  cursor: pointer;
+  @include transition;
+
+  &:hover {
+    background: $cl-primary-dark;
+    color: #bae7ff;
+  }
+}
+.vm-button-primary {
+  display: inline-block;
+
+  padding: 1rem 1.875rem;
+  text-align: center;
+
+  @include font($fs-15, 600, 1.25rem);
+
+  color: $cl-text-primary;
+  background: #1890ff;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  @include transition;
+
+  &:hover {
+    background: $cl-primary-dark;
+    color: #bae7ff;
+  }
+}

@@ -1,0 +1,21 @@
+// utils
+@import "utils/variables";
+@import "utils/mixin";
+@import "utils/reset";
+@import "utils/base";
+@import "components/container";
+
+// components
+@import "components/button";
+
+//main
+@import "components/main/hero";
+@import "components/main/solution";
+@import "components/main/investment";
+@import "components/main/round";
+@import "components/main/metrics";
+
+// header footer
+@import "components/header";
+@import "components/footer";
+// мейн

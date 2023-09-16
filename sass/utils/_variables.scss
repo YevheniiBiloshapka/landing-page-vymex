@@ -1,0 +1,62 @@
+//font-size
+$fs-80: 5rem;
+$fs-48: 3rem;
+$fs-34: 2.125rem;
+$fs-24: 1.5rem;
+$fs-20: 1.25rem;
+$fs-18: 1.125rem;
+$fs-16: 1rem;
+$fs-15: 0.9375rem;
+$fs-14: 0.875rem;
+$fs-12: 0.75rem;
+
+//border-radius
+$br-200: 12.5rem;
+$br-20: 1.25rem;
+$br-18: 1.15625rem;
+$br-16: 1rem;
+$br-12: 0.75rem;
+$br-10: 0.625rem;
+$br-8: 0.5rem;
+
+//text
+$cl-text-primary: #fff;
+$cl-text-secondary: #c1cfdb;
+$cl-text-disabled: #8296aa;
+$cl-text-dark: #181f26;
+
+//devider
+$cl-divider-main: #4a5a6a;
+$cl-divider-light: rgba(49, 61, 73, 0.6);
+$cl-divider-dark: #313d49;
+
+//primary
+$cl-primary-main: #1890ff;
+$cl-primary-light: #2ca4ff;
+$cl-primary-light-100: rgba(24, 144, 255, 0.2);
+$cl-primary-dark: #0077e5;
+
+//background
+$cl-bg-default: #181f26;
+$cl-bg-paper: #212a33;
+$cl-bg-light: rgba(63, 79, 95, 0.4);
+
+//info
+$cl-info-main: #facd23;
+$cl-info-light: #f6e339;
+$cl-info-dark: #f3c61c;
+
+//sucessful
+$cl-success-main: #73d13d;
+$cl-success-light-100: #d5f1c5;
+$cl-success-light-200: rgba(146, 203, 162, 0.3);
+$cl-success-light-300: #8bda8e;
+$cl-success-dark: #62c02c;
+
+//error
+$cl-error-main: #ed5959;
+$cl-error-light-100: rgba(141, 106, 104, 0.3);
+$cl-error-dark: #d74343;
+
+//gradient
+$gradient: linear-gradient(193deg, #212a33 5.29%, #242e37 99.14%);

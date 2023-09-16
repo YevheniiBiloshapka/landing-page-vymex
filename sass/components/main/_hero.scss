@@ -1,0 +1,66 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-image: url("/img/invest/hero/hero__bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-bottom: 11.25rem;
+
+  &__title {
+    color: $cl-text-primary;
+    text-align: center;
+    font-family: Inter;
+    @include font(5rem, 700, 5.5rem);
+    padding-top: 10rem;
+    margin-bottom: 8rem;
+  }
+
+  &__txt {
+    color: $cl-text-primary;
+    @include font(1.125, 400);
+    letter-spacing: 0.0225rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin-bottom: 1.87rem;
+  }
+
+  &__video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 41.9375rem;
+    height: 19rem;
+    overflow: hidden;
+    border-radius: $br-20 $br-20 0rem 0rem;
+
+    background-image: url("/img/invest/hero/hero__video-bg.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 88px;
+      width: 88px;
+      cursor: pointer;
+
+      border-radius: 5.28806rem;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      @include transition;
+
+      &:hover {
+        background: $cl-primary-main;
+        transform: scale(1.2);
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.metrics {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 8.75rem;
+  &__title {
+    text-align: center;
+    margin-bottom: 3.12rem;
+  }
+
+  &__table {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5rem;
+
+    gap: 1.87rem 1.94rem;
+  }
+  & .vm-button-primary {
+    margin: 0 auto;
+    width: fit-content;
+  }
+}
+
+.metrics__table--item {
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, #212a33 0%, #181f26 157.34%);
+
+  &-title {
+    color: $cl-text-primary;
+    @include font($fs-48, 700, 100%);
+    margin-bottom: 1.25rem;
+  }
+  &-fund-title {
+    color: $cl-text-primary;
+    @include font($fs-80, 700, 100%);
+    margin-bottom: 1.25rem;
+  }
+  &-descr {
+    color: $cl-text-secondary;
+    @include font($fs-24, 400, 1.875rem);
+    letter-spacing: 0.03rem;
+  }
+
+  &.company-forecast {
+    flex: 1; //this
+    grid-column: span 2;
+    display: flex;
+    gap: 1.87rem;
+    height: fit-content;
+
+    & div {
+      flex: 1;
+    }
+  }
+
+  &.current-funds,
+  &.fund-volume {
+    flex: 2; //this
+    display: flex;
+    flex-direction: column;
+
+    min-height: 26.8125rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+  &.current-funds {
+    background-image: url(/img/invest/metrics/metrics_blue.webp);
+  }
+
+  &.fund-volume {
+    background-image: url(/img/invest/metrics/metrics_green.webp);
+  }
+}
+
+.block-stats {
+  margin-top: auto;
+  &__subtitle {
+    color: $cl-text-secondary;
+    @include font($fs-14, 400, 128.571%);
+    letter-spacing: 0.0175rem;
+    margin-bottom: 1rem;
+  }
+
+  &__ring-blue,
+  &__ring-green {
+    display: flex;
+    align-items: center;
+  }
+  &__ring-blue {
+    &.ldBar path.mainline {
+      stroke: $cl-primary-main;
+    }
+    &.ldBar path.baseline {
+      stroke: #2a4c6b;
+    }
+  }
+  &__ring-green {
+    &.ldBar path.mainline {
+      stroke: $cl-success-main;
+    }
+    &.ldBar path.baseline {
+      stroke: #314b33;
+    }
+  }
+}
+
+.ldBar {
+  position: relative;
+}
+.ldBar-label {
+  margin-left: 0.4rem;
+  color: $cl-text-primary;
+  @include font($fs-48, 700, 100%);
+}
+.ldBar-label:after {
+  content: "%";
+  display: inline;
+}
+.ldBar.no-percent .ldBar-label:after {
+  content: "";
+}
+.ldBar path.mainline {
+  stroke-width: 20;
+  stroke: $cl-primary-main;
+  stroke-linecap: round;
+}
+.ldBar path.baseline {
+  stroke-width: 20;
+  stroke: #2a4c6b;
+  stroke-linecap: round;
+}

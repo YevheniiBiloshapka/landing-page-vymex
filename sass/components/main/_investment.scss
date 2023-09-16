@@ -1,0 +1,76 @@
+.investment {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  margin: 0 auto 8.44rem;
+
+  &__icon-box {
+    width: 5.9375rem;
+    height: 5.9375rem;
+    padding: 0.0625rem;
+
+    border-radius: $br-20;
+    background: linear-gradient(
+      20deg,
+      rgba(24, 31, 38, 0.28) 25.36%,
+      rgba(186, 231, 255, 0.28) 100%
+    );
+    box-shadow: 10px 20px 100px 0px rgba(26, 33, 40, 0.3);
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 100%;
+      border-radius: $br-20;
+
+      background: linear-gradient(
+        135deg,
+        rgba(32, 45, 49, 0.55) 0%,
+        rgba(24, 31, 38, 0.26) 100%
+      );
+    }
+    & img {
+      width: 4rem;
+      height: 2.6875rem;
+    }
+  }
+  &__title {
+    @include font(5rem, 700, 5.5rem);
+    color: $cl-text-primary;
+
+    max-width: 85.4375rem;
+    margin-bottom: 2.5rem;
+  }
+  &__descr {
+    color: $cl-text-secondary;
+    @include font(1.125rem, 400, 1.875rem);
+    letter-spacing: 0.0225rem;
+
+    max-width: 60.625rem;
+    margin-bottom: 3.63rem;
+  }
+
+  &__bg-light {
+    position: absolute;
+    border: 1px solid red;
+    top: -53%;
+    left: 65%;
+    transform: translate(-50%, 50%) rotate(145.436deg);
+
+    z-index: -5;
+    width: 57.739rem;
+    height: 21.90988rem;
+
+    border-radius: 57.739rem;
+    opacity: 0.3;
+    background: linear-gradient(275deg, #1890ff 0.99%, #ebd3fc 104.83%);
+    -webkit-filter: blur(125px);
+    filter: blur(125px);
+  }
+}

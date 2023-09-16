@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vymex</title>
+
+    <!-- <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/favicon_io/favicon.ico"
+    /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="loading-bar.css" />
+  </head>
+  <body>
+    <!-- ? header -->
+    <header class="header">header</header>
+
+    <!--? main -->
+    <main>
+      <!-- ? block1 -->
+      <section class="hero">
+        <h1 class="hero__title">Все только начинается.</h1>
+        <p class="hero__txt">Посмотрите на YouTube</p>
+        <h2 class="title hero__subtitle">Что такое Vymex?</h2>
+        <div class="hero__video">
+          <button class="hero__video-button">
+            <svg
+              width="16"
+              height="18"
+              viewBox="0 0 16 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                opacity="0.6"
+                d="M15.1656 8.13542C15.8326 8.52025 15.8326 9.48297 15.1656 9.86779L1.85299 17.5481C1.18632 17.9328 0.353267 17.4516 0.353267 16.682L0.353268 1.32125C0.353268 0.551594 1.18632 0.0704523 1.85299 0.455068L15.1656 8.13542Z"
+                fill="white"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- block2 -->
+      <section class="solution container">
+        <div class="solution__first">
+          <h2 class="solution__first-title title">
+            Vymex создал решение, которое полностью изменит среду, разделив нишу
+            «ПО для бизнеса» на:
+          </h2>
+          <div class="solution__first-box">
+            <p class="solution__first-txt">
+              Системы управления базовыми потребностями
+            </p>
+            <p class="solution__first-txt">
+              Приложения для проектной деятельности компании
+            </p>
+          </div>
+        </div>
+
+        <div class="solution__second">
+          <p>
+            Новая ниша, размером $192 млрд годового дохода, повысит
+            эффективность работы бизнеса и значительно снизит показатель
+            “смертности стартапов”. Компании получат системное решение проблем,
+            которых невозможно достичь существующими методами и системами. Через
+            10 лет это решение будет такой же нормой, как использование решений
+            IOS и Android сегодня.
+          </p>
+        </div>
+      </section>
+
+      <!-- block3 -->
+      <section class="investment">
+        <div class="investment__icon-box">
+          <div class="investment__icon-box-wrapper">
+            <img
+              src="/img/invest/investment/investment_wallet.webp"
+              alt="background light"
+              width="4rem"
+              height="2.6875rem"
+            />
+          </div>
+        </div>
+        <h2 class="investment__title title">
+          Инвестиции в капитал с возвратом в виде дивидендов за первые два года.
+        </h2>
+        <p class="investment__descr">
+          Юридически мы создаем одну из самых простых и масштабируемых структур
+          владения компанией. Для входа в капитал ресурсами фондов предусмотрен
+          инструмент из английского права - “Convertible loan”. По всем расчетам
+          компании, это будет единственный раунд для фондов до 2030 года. Все
+          детали расписаны в новой презентации для фондов и в финансовой модели,
+          которая отображает все факты и предположения компании.
+        </p>
+        <button class="investment__button vm-button">
+          Pitch Deck for investors
+        </button>
+        <div class="investment__bg-light" />
+      </section>
+
+      <!-- block4 -->
+      <section class="container round">
+        <p class="round__subtitle">Фондам</p>
+        <div class="round__header">
+          <h2 class="round__header-title title">Round A</h2>
+          <p class="round__header-descr">
+            Калькулятор в таблице подсчитает сумму входа и предполагаемый
+            финансовый результат компании.
+          </p>
+        </div>
+
+        <article class="calc">
+          <h2 class="visually-title">Калькулятор инвестиций</h2>
+          <div class="calc__sidebar">
+            <h3 class="calc__sidebar--title">
+              Выберите одну или несколько долей
+            </h3>
+            <ul class="calc__sidebar--selected-list">
+              <li class="calc__sidebar--selected-list--item">
+                <span class="calc__sidebar--selected-list--item-cash"
+                  >$ 22500</span
+                >
+                <span class="calc__sidebar--selected-list--item-percent"
+                  >0.25%</span
+                >
+                <span
+                  class="calc__sidebar--selected-list--item-delete"
+                  aria-label="Delete"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="8"
+                    height="8"
+                    viewBox="0 0 8 8"
+                    fill="none"
+                  >
+                    <path
+                      d="M6.27718 5.69147C6.44302 5.85747 6.44302 6.11568 6.27718 6.28168C6.19426 6.36468 6.09293 6.40156 5.98237 6.40156C5.87181 6.40156 5.77047 6.36468 5.68756 6.28168L4.00156 4.59407L2.31557 6.28168C2.23265 6.36468 2.13131 6.40156 2.02076 6.40156C1.9102 6.40156 1.80886 6.36468 1.72594 6.28168C1.56011 6.11568 1.56011 5.85747 1.72594 5.69147L3.41193 4.00387L1.72594 2.31626C1.56011 2.15027 1.56011 1.89205 1.72594 1.72606C1.89178 1.56006 2.14973 1.56006 2.31557 1.72606L4.00156 3.41366L5.68756 1.72606C5.85339 1.56006 6.11135 1.56006 6.27718 1.72606C6.44302 1.89205 6.44302 2.15027 6.27718 2.31626L4.59119 4.00387L6.27718 5.69147Z"
+                      fill="#8296AA"
+                    /></svg
+                ></span>
+              </li>
+            </ul>
+            <div class="calc__sidebar--total-amount">
+              <h4 class="calc__sidebar--total-amount--title">
+                Общая сумма выбранных долей
+              </h4>
+              <p class="calc__sidebar--total-amount--cash">
+                $1 600 000 <span>4.00%</span>
+              </p>
+            </div>
+            <div class="calc__sidebar--results">
+              <h4 class="calc__sidebar--results--title">
+                Результат на этот номинал
+              </h4>
+              <p class="calc__sidebar--results--cash">
+                Дивиденды до 2030<span>$6 492 820</span>
+              </p>
+              <p class="calc__sidebar--results--cash">
+                Стоимость на 2030<span>$73 163 022</span>
+              </p>
+            </div>
+            <button class="vm-button-primary">Обсудить условия</button>
+            <p class="calc__sidebar--info-txt">
+              Данные таблицы обновляются после каждой новой сделки или
+              изменениях в рассчетах
+            </p>
+          </div>
+
+          <div class="calc__wrapper">
+            <ul class="calc__area">
+              <!-- ! columns -->
+              <li class="calc__area--column">
+                <h4 class="calc__area--column--title">
+                  Доля из раунда Pre-seed
+                </h4>
+                <div class="calc__area--column-table">
+                  <h5 class="calc__area--column-table--date">2023 год</h5>
+                  <div class="calc__area--column-table--infobox">
+                    <div class="calc__area--column-table--infobox-column">
+                      <h6>В продаже</h6>
+                      <p>5.50 %</p>
+                    </div>
+                    <div class="calc__area--column-table--infobox-column">
+                      <h6>Цена за объем</h6>
+                      <p>$ 775 000</p>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="calc__position--list">
+                  <li
+                    class="calc__position--item booked"
+                    aria-label="Выбрать долю"
+                  >
+                    $ 800 000 / 2%
+                  </li>
+                </ul>
+              </li>
+              <li class="calc__area--column">
+                <h4 class="calc__area--column--title">
+                  После выхода коммерческой версии
+                </h4>
+                <div class="calc__area--column-table">
+                  <h5 class="calc__area--column-table--date">Январь 2024</h5>
+                  <div class="calc__area--column-table--infobox">
+                    <div class="calc__area--column-table--infobox-column">
+                      <h6>В продаже</h6>
+                      <p>4.0 %</p>
+                    </div>
+                    <div class="calc__area--column-table--infobox-column">
+                      <h6>Цена за объем</h6>
+                      <p>$ 1 600 000</p>
+                    </div>
+                  </div>
+                </div>
+                <ul class="calc__position--list">
+                  <li
+                    class="calc__position--item available"
+                    aria-label="Выбрать долю"
+                  >
+                    $ 800 000 / 2%
+                  </li>
+                  <li
+                    class="calc__position--item sold"
+                    aria-label="Выбрать долю"
+                  >
+                    $ 800 000 / 2%
+                  </li>
+                  <li
+                    class="calc__position--item selected"
+                    aria-label="Выбрать долю"
+                  >
+                    $ 800 000 / 2%
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <!-- calc status info -->
+            <ul class="calc__status-info">
+              <h4 class="calc__status-info--title">Статусы долей</h4>
+              <li class="calc__status-info--item">
+                <div class="calc__status-info--item-state gray"></div>
+                Куплено
+              </li>
+              <li class="calc__status-info--item">
+                <div class="calc__status-info--item-state yellow"></div>
+                Бронь
+              </li>
+              <li class="calc__status-info--item">
+                <div class="calc__status-info--item-state blue"></div>
+                В продаже
+              </li>
+              <li class="calc__status-info--item">
+                <div class="calc__status-info--item-state darkblue"></div>
+                Выбрано вами
+              </li>
+            </ul>
+          </div>
+        </article>
+        <div class="round__bg-light"></div>
+      </section>
+
+      <!-- block5 -->
+      <section class="container metrics">
+        <h2 class="metrics__title title">Показатели раунда.</h2>
+
+        <div class="metrics__table">
+          <div class="metrics__table--item company-forecast">
+            <div class="metrics__table--item-container">
+              <h3 class="metrics__table--item-title">$1 829 075 557</h3>
+              <p class="metrics__table--item-descr">
+                Вероятная стоимость компании при правильном росте на январь 2030
+                года.
+              </p>
+            </div>
+            <div class="metrics__table--item-container">
+              <h3 class="metrics__table--item-title">$1 623 000</h3>
+              <p class="metrics__table--item-descr">
+                Ожидаемый объем дивидендов инвестора на 1% за первые пять лет
+                продаж подписки.
+              </p>
+            </div>
+          </div>
+          <div class="metrics__table--item current-funds">
+            <h3 class="metrics__table--item-fund-title">$1 090 000</h3>
+            <p class="metrics__table--item-descr">
+              Привлечено на данный момент
+            </p>
+
+            <div class="block-stats">
+              <p class="block-stats__subtitle">
+                Компании уже куплено инвесторами
+              </p>
+
+              <div
+                class="block-stats__ring-blue ldBar"
+                data-preset="circle"
+                data-stroke-width="20"
+                data-value="35.02"
+                style="width: fit-content; height: 4rem"
+              ></div>
+            </div>
+          </div>
+          <div class="metrics__table--item fund-volume">
+            <h3 class="metrics__table--item-fund-title">$2 375 000</h3>
+            <p class="metrics__table--item-descr">Доступный объем для фондов</p>
+
+            <div class="block-stats">
+              <p class="block-stats__subtitle">Будет еще продано</p>
+
+              <div
+                class="block-stats__ring-green ldBar"
+                data-preset="circle"
+                data-stroke-width="20"
+                data-value="9.05"
+                style="width: fit-content; height: 4rem"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <button class="vm-button-primary">Смотреть финансовую модель</button>
+      </section>
+    </main>
+
+    <!-- ? Footer  -->
+    <footer class="section footer">footer</footer>
+
+    <script
+      type="text/javascript"
+      src="/js/loading-bar/loading-bar.js"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

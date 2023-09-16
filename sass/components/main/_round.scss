@@ -178,16 +178,18 @@
 .calc__wrapper {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   width: 100%;
   min-height: 100%;
   padding: 1rem 1.31rem 2rem 1.38rem;
 }
+
 .calc__area {
   display: flex;
   flex-wrap: nowrap;
-  gap: 1.5rem;
   overflow: auto;
+  gap: 1.5rem;
   width: 100%;
   height: 100%;
   max-height: 30.5rem;
@@ -251,6 +253,48 @@
         border-left: 1px solid $cl-divider-dark;
       }
     }
+  }
+
+  &::-webkit-scrollbar {
+    width: 1em;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #181f26;
+    border-radius: 30px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #1890ff;
+    border-radius: 30px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track:vertical {
+    background: transparent;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb:horizontal {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track:horizontal {
+    background: transparent;
+    width: 8px;
+  }
+  &::-webkit-scrollbar:horizontal {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    display: none;
   }
 }
 

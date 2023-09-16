@@ -20,6 +20,17 @@ body.modal-open {
   color: rgba(117, 117, 117, 0.5);
 }
 
+body::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background: $cl-primary-main;
+  width: 12px;
+}
+
+body::-webkit-scrollbar {
+  background: #181f26;
+  width: 12px;
+}
+
 .visually-title {
   position: absolute;
   width: 1px;
@@ -38,4 +49,35 @@ body.modal-open {
   @include font($fs-48, 700);
   font-style: normal;
   line-height: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Inter-Medium.e1060ec7.eot");
+}
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Inter-Medium.e1060ec7.eot");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Inter-Regular.034c55ee.eot");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Inter-Bold.cb1ca8ec.eot");
 }

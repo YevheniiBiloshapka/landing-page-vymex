@@ -26,8 +26,7 @@
   padding: 2.5rem;
   border-radius: 1.25rem;
   overflow: hidden;
-  background: linear-gradient(145deg, #212a33 0%, #181f26 157.34%);
-
+  background-color: $cl-bg-paper;
   &-title {
     color: $cl-text-primary;
     @include font($fs-48, 700, 100%);
@@ -63,22 +62,17 @@
     flex-direction: column;
 
     min-height: 26.8125rem;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background: linear-gradient(
-      180deg,
-      rgba(35, 44, 52, 0.6) 0%,
-      rgba(33, 42, 51, 0.6) 100%
-    );
-    backdrop-filter: blur(100px);
+    background-color: $cl-bg-paper;
   }
   &.current-funds {
-    background-image: url(./img/invest/metrics/metrics_blue.webp);
+    background-image: url("../img/invest/metrics/metrics_blue.webp");
   }
 
   &.fund-volume {
-    background-image: url(./img/invest/metrics/metrics_green.webp);
+    background-image: url("../img/invest/metrics/metrics_green.webp");
   }
 }
 

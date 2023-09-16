@@ -3,10 +3,12 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-image: url("./img/invest/hero/hero__bg.webp");
-  background-size: cover;
+  background-image: url("../img/invest/hero/hero__bg.webp");
+
+  background-size: 90rem;
   background-repeat: no-repeat;
   background-position: bottom;
+
   margin-bottom: 11.25rem;
 
   &__title {
@@ -39,7 +41,7 @@
     overflow: hidden;
     border-radius: $br-20 $br-20 0rem 0rem;
 
-    background-image: url("./img/invest/hero/hero__video-bg.webp");
+    background-image: url("../img/invest/hero/hero__video-bg.webp");
     background-size: contain;
     background-repeat: no-repeat;
 

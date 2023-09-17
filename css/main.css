@@ -1200,39 +1200,49 @@ body::-webkit-scrollbar {
   max-height: 6em;
 }
 
-.benefits__list::-webkit-scrollbar {
+.benefits__list::-webkit-scrollbar,
+.benefits__descr::-webkit-scrollbar {
   width: 1em;
 }
-.benefits__list::-webkit-scrollbar-track {
+.benefits__list::-webkit-scrollbar-track,
+.benefits__descr::-webkit-scrollbar-track {
   background: #181f26;
   border-radius: 30px;
 }
-.benefits__list::-webkit-scrollbar-thumb {
+.benefits__list::-webkit-scrollbar-thumb,
+.benefits__descr::-webkit-scrollbar-thumb {
   border-radius: 0.15625rem;
   background: #313d49;
 }
-.benefits__list::-webkit-scrollbar-thumb:vertical {
+.benefits__list::-webkit-scrollbar-thumb:vertical,
+.benefits__descr::-webkit-scrollbar-thumb:vertical {
   width: 8px;
 }
-.benefits__list::-webkit-scrollbar-track:vertical {
+.benefits__list::-webkit-scrollbar-track:vertical,
+.benefits__descr::-webkit-scrollbar-track:vertical {
   background: transparent;
   width: 8px;
 }
-.benefits__list::-webkit-scrollbar:vertical {
+.benefits__list::-webkit-scrollbar:vertical,
+.benefits__descr::-webkit-scrollbar:vertical {
   width: 5px;
 }
-.benefits__list::-webkit-scrollbar-thumb:horizontal {
+.benefits__list::-webkit-scrollbar-thumb:horizontal,
+.benefits__descr::-webkit-scrollbar-thumb:horizontal {
   width: 8px;
 }
-.benefits__list::-webkit-scrollbar-track:horizontal {
+.benefits__list::-webkit-scrollbar-track:horizontal,
+.benefits__descr::-webkit-scrollbar-track:horizontal {
   background: transparent;
   width: 8px;
 }
-.benefits__list::-webkit-scrollbar:horizontal {
+.benefits__list::-webkit-scrollbar:horizontal,
+.benefits__descr::-webkit-scrollbar:horizontal {
   width: 8px;
   height: 5px;
 }
-.benefits__list::-webkit-scrollbar-corner {
+.benefits__list::-webkit-scrollbar-corner,
+.benefits__descr::-webkit-scrollbar-corner {
   display: none;
 }
 

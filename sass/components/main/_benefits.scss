@@ -109,7 +109,8 @@
   }
 }
 
-.benefits__list {
+.benefits__list,
+.benefits__descr {
   &::-webkit-scrollbar {
     width: 1em;
   }

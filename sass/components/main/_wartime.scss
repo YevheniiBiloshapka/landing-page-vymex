@@ -1,0 +1,44 @@
+.wartime {
+  position: relative;
+  margin-bottom: 11.25rem;
+  &__wrapper {
+    display: flex;
+    border-radius: $br-20;
+    overflow: hidden;
+    border: 1px solid $cl-divider-dark;
+    background-color: $cl-bg-default;
+  }
+  &__img {
+    min-width: 30.0625rem;
+    min-height: 17.25rem;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 2.75rem 6.25rem 2.12rem 1.13rem;
+  }
+  &__title {
+    color: $cl-text-primary;
+    @include font($fs-24, 700, 125%);
+  }
+  &__descr {
+    color: $cl-text-primary;
+    @include font($fs-16, 400, 150%);
+    letter-spacing: 0.02rem;
+  }
+  &__bg-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -70%) rotate(159.436deg);
+    z-index: -5;
+
+    width: 57.739rem;
+    height: 21.90988rem;
+    border-radius: 57.739rem;
+    opacity: 0.3;
+    background: linear-gradient(275deg, #1890ff 0.99%, #ebd3fc 104.83%);
+    filter: blur(125px);
+  }
+}

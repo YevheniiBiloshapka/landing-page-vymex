@@ -1,0 +1,46 @@
+.about-me {
+  position: relative;
+  display: flex;
+  min-height: 38.25rem;
+  padding: 3.81rem 4.12rem 3.81rem 5.44rem;
+  margin-bottom: 11.25rem;
+
+  overflow: hidden;
+  border-radius: $br-20;
+
+  background-image: url("../img/invest/about-me/about-me_bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  //   background-position: ;
+  background-color: $cl-bg-paper;
+
+  &__box {
+    max-width: 35.3125rem;
+    &--title {
+      color: $cl-text-primary;
+      @include font($fs-48, 500, 140%);
+      letter-spacing: -0.06rem;
+      margin-bottom: 1.33rem;
+    }
+    &--descr {
+      color: $cl-text-primary;
+      @include font($fs-18, 500, 140%);
+      letter-spacing: -0.0225rem;
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    bottom: 0;
+    right: 3.06rem;
+
+    width: 24.0625rem;
+    height: 33.82306rem;
+    transform: rotate(-0.426deg);
+    flex-shrink: 0;
+  }
+}

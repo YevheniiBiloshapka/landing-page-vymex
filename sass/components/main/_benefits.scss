@@ -85,7 +85,6 @@
     gap: 0.38rem;
 
     border-radius: $br-10;
-    // padding: 1.25rem 1rem;
     border: 1px solid $cl-divider-light;
     background: $cl-bg-paper;
 
@@ -103,14 +102,14 @@
       color: $cl-text-secondary;
       @include font($fs-14, 400, 128.571%);
       letter-spacing: 0.0175rem;
-      overflow: scroll;
+      overflow-y: scroll;
       max-height: 6em;
     }
   }
 }
 
 .benefits__list,
-.benefits__descr {
+.benefits__descr--item-explan {
   &::-webkit-scrollbar {
     width: 1em;
   }

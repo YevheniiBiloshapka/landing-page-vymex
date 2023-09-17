@@ -36,7 +36,7 @@
         <p class="hero__txt">Посмотрите на YouTube</p>
         <h2 class="title hero__subtitle">Что такое Vymex?</h2>
         <div class="hero__video">
-          <button class="hero__video-button">
+          <button class="hero__video-button" data-modal-open>
             <svg
               width="16"
               height="18"
@@ -712,9 +712,29 @@
     <!-- ? Footer  -->
     <footer class="section footer">footer</footer>
 
+    <!-- ? Modal  -->
+
+    <div class="blackdrop is-hidden" data-modal>
+      <div class="modal">
+        <!-- Close button -->
+        <button class="modal-button" data-modal-close>Закрыть ×</button>
+        <div class="video-container">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/VoVmjrw6jFg?si=CK2V9cm-9xs726gO"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
     <script
       type="text/javascript"
       src="./js/loading-bar/loading-bar.js"
     ></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

@@ -1264,14 +1264,14 @@ body::-webkit-scrollbar {
   letter-spacing: 0.02rem;
 }
 .benefits__descr--item-explan {
-  padding: 0 1rem 0 0.93rem;
+  padding: 0 0.4rem 0 0.93rem;
   margin-bottom: 1.25rem;
   color: #c1cfdb;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 128.571%;
   letter-spacing: 0.0175rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 6em;
 }
 

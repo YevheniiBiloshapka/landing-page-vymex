@@ -96,13 +96,13 @@
       letter-spacing: 0.02rem;
     }
     &-explan {
-      padding: 0 1rem 0 0.93rem;
+      padding: 0 0.4rem 0 0.93rem;
       margin-bottom: 1.25rem;
 
       color: $cl-text-secondary;
       @include font($fs-14, 400, 128.571%);
       letter-spacing: 0.0175rem;
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: 6em;
     }
   }

@@ -1,28 +1,28 @@
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-  background-image: url("../img/invest/hero/hero__bg.webp");
+  background-image: url("../img/invest/hero/hero__bg-mobile.webp");
 
-  background-size: 90rem;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-position: bottom;
 
-  margin-bottom: 11.25rem;
-
+  margin-bottom: 6.25rem;
+  & .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   &__title {
     color: $cl-text-primary;
     text-align: center;
-    font-family: Inter;
-    @include font(5rem, 700, 5.5rem);
-    padding-top: 10rem;
-    margin-bottom: 8rem;
+    @include font(2.375rem, 700, 110%);
+    padding-top: 7rem;
+    margin-bottom: 5rem;
   }
 
   &__txt {
     color: $cl-text-primary;
-    @include font(1.125, 400);
+    @include font(1rem, 400);
     letter-spacing: 0.0225rem;
     margin-bottom: 0.25rem;
   }
@@ -30,27 +30,32 @@
   &__subtitle {
     text-align: center;
     margin-bottom: 1.87rem;
+    @include font($fs-24, 700, 120%);
   }
 
   &__video {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 41.9375rem;
-    height: 19rem;
+
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 2.2079;
+    max-width: 20.625rem;
+
     overflow: hidden;
     border-radius: $br-20 $br-20 0rem 0rem;
 
     background-image: url("../img/invest/hero/hero__video-bg.webp");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 
     &-button {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 88px;
-      width: 88px;
+      height: 2.60069rem;
+      width: 2.60069rem;
       cursor: pointer;
 
       border-radius: 5.28806rem;
@@ -65,5 +70,54 @@
         border: 1px solid $cl-divider-light;
       }
     }
+  }
+
+  @media screen and (min-width: 576px) {
+    background-size: 48rem;
+    background-image: url("../img/invest/hero/hero__bg.webp");
+    &__video {
+      max-width: 41.9375rem;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    background-size: 65rem;
+  }
+  @media screen and (min-width: 768px) {
+    background-size: 80rem;
+  }
+  @media screen and (min-width: 922px) {
+    background-size: 90rem;
+    margin-bottom: 11.25rem;
+
+    &__title {
+      @include font(5rem, 700, 5.5rem);
+      padding-top: 10rem;
+      margin-bottom: 8rem;
+    }
+
+    &__txt {
+      @include font($fs-18, 400);
+      letter-spacing: 0.0225rem;
+      margin-bottom: 0.25rem;
+    }
+
+    &__subtitle {
+      margin-bottom: 1.87rem;
+      @include font($fs-48, 700, 120%);
+    }
+
+    &__video {
+      max-width: 41.9375rem;
+
+      &-button {
+        width: 5.28rem;
+        height: 5.28rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+  }
+  @media screen and (min-width: 1280px) {
   }
 }

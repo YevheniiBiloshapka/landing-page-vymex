@@ -50,6 +50,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -191,20 +195,64 @@ body::-webkit-scrollbar {
   src: url("../fonts/Inter-Black.ttf") format("truetype");
   font-weight: 900;
 }
-.container {
-  margin: 0 auto;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-  width: 320px;
+.ldBar {
+  position: relative;
 }
-@media screen and (min-width: 390px) {
+
+.ldBar-label {
+  margin-left: 0.4rem;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.ldBar-label:after {
+  content: "%";
+  display: inline;
+}
+
+.ldBar.no-percent .ldBar-label:after {
+  content: "";
+}
+
+.ldBar path.mainline {
+  stroke-width: 20;
+  stroke: #1890ff;
+  stroke-linecap: round;
+}
+
+.ldBar path.baseline {
+  stroke-width: 20;
+  stroke: #2a4c6b;
+  stroke-linecap: round;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
   .container {
-    width: 390px;
+    max-width: 540px;
   }
 }
-@media screen and (min-width: 744px) {
+@media screen and (min-width: 768px) {
   .container {
-    width: 744px;
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 922px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -328,6 +376,14 @@ body::-webkit-scrollbar {
 }
 
 .hero {
+  width: 100%;
+  background-image: url("../img/invest/hero/hero__bg-mobile.webp");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin-bottom: 6.25rem;
+}
+.hero .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -338,26 +394,19 @@ body::-webkit-scrollbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  background-image: url("../img/invest/hero/hero__bg.webp");
-  background-size: 90rem;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  margin-bottom: 11.25rem;
 }
 .hero__title {
   color: #fff;
   text-align: center;
-  font-family: Inter;
-  font-size: 5rem;
+  font-size: 2.375rem;
   font-weight: 700;
-  line-height: 5.5rem;
-  padding-top: 10rem;
-  margin-bottom: 8rem;
+  line-height: 110%;
+  padding-top: 7rem;
+  margin-bottom: 5rem;
 }
 .hero__txt {
   color: #fff;
-  font-size: 1.125;
+  font-size: 1rem;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 0.0225rem;
@@ -366,6 +415,9 @@ body::-webkit-scrollbar {
 .hero__subtitle {
   text-align: center;
   margin-bottom: 1.87rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 120%;
 }
 .hero__video {
   display: -webkit-box;
@@ -377,12 +429,14 @@ body::-webkit-scrollbar {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 41.9375rem;
-  height: 19rem;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 2.2079;
+  max-width: 20.625rem;
   overflow: hidden;
   border-radius: 1.25rem 1.25rem 0rem 0rem;
   background-image: url("../img/invest/hero/hero__video-bg.webp");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .hero__video-button {
@@ -395,8 +449,8 @@ body::-webkit-scrollbar {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 88px;
-  width: 88px;
+  height: 2.60069rem;
+  width: 2.60069rem;
   cursor: pointer;
   border-radius: 5.28806rem;
   border: none;
@@ -412,13 +466,68 @@ body::-webkit-scrollbar {
           transform: scale(1.2);
   border: 1px solid rgba(49, 61, 73, 0.6);
 }
-
+@media screen and (min-width: 576px) {
+  .hero {
+    background-size: 48rem;
+    background-image: url("../img/invest/hero/hero__bg.webp");
+  }
+  .hero__video {
+    max-width: 41.9375rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .hero {
+    background-size: 65rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background-size: 80rem;
+  }
+}
+@media screen and (min-width: 922px) {
+  .hero {
+    background-size: 90rem;
+    margin-bottom: 11.25rem;
+  }
+  .hero__title {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 5.5rem;
+    padding-top: 10rem;
+    margin-bottom: 8rem;
+  }
+  .hero__txt {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.0225rem;
+    margin-bottom: 0.25rem;
+  }
+  .hero__subtitle {
+    margin-bottom: 1.87rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 120%;
+  }
+  .hero__video {
+    max-width: 41.9375rem;
+  }
+  .hero__video-button {
+    width: 5.28rem;
+    height: 5.28rem;
+  }
+}
 .solution {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1.87rem;
-  margin-bottom: 12.62rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 7.5rem;
 }
 .solution__first {
   -webkit-box-flex: 1;
@@ -427,12 +536,19 @@ body::-webkit-scrollbar {
 }
 .solution__first-title {
   margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: normal;
 }
 .solution__first-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1.87rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.63rem;
 }
 .solution__first-txt {
   -webkit-box-flex: 1;
@@ -454,10 +570,66 @@ body::-webkit-scrollbar {
 }
 .solution__second p {
   color: #c1cfdb;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.875rem;
+  line-height: 150%;
   letter-spacing: 0.0225rem;
+}
+@media screen and (min-width: 922px) {
+  .solution {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1.87rem;
+    margin-bottom: 12.62rem;
+  }
+  .solution__first {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 13rem;
+            flex: 1 0 13rem;
+  }
+  .solution__first-title {
+    margin-bottom: 1.25rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .solution__first-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1.87rem;
+  }
+  .solution__first-txt {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    border-radius: 1.25rem;
+    background-color: #212a33;
+    padding: 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #fff;
+  }
+  .solution__second {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin-top: 0.69rem;
+  }
+  .solution__second p {
+    color: #c1cfdb;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 166.667%;
+    letter-spacing: 0.0225rem;
+  }
 }
 
 .investment {
@@ -473,11 +645,12 @@ body::-webkit-scrollbar {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  margin: 0 auto 8.44rem;
+  padding: 0 0.9375rem;
+  margin: 0 auto 7.5rem;
 }
 .investment__icon-box {
-  width: 5.9375rem;
-  height: 5.9375rem;
+  width: 5rem;
+  height: 5rem;
   padding: 0.0625rem;
   border-radius: 1.25rem;
   background: linear-gradient(20deg, rgba(24, 31, 38, 0.28) 25.36%, rgba(186, 231, 255, 0.28) 100%);
@@ -504,29 +677,29 @@ body::-webkit-scrollbar {
   background: linear-gradient(135deg, rgba(32, 45, 49, 0.55) 0%, rgba(24, 31, 38, 0.26) 100%);
 }
 .investment__icon-box img {
-  width: 4rem;
-  height: 2.6875rem;
+  width: 3.36844rem;
+  height: 2.26319rem;
 }
 .investment__title {
-  font-size: 5rem;
+  font-size: 2.375rem;
   font-weight: 700;
-  line-height: 5.5rem;
+  line-height: 110%;
+  text-align: center;
   color: #fff;
   max-width: 85.4375rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 .investment__descr {
   color: #c1cfdb;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.875rem;
+  line-height: 175%;
   letter-spacing: 0.0225rem;
   max-width: 60.625rem;
-  margin-bottom: 3.63rem;
+  margin-bottom: 2.5rem;
 }
 .investment__bg-light {
   position: absolute;
-  border: 1px solid red;
   top: -53%;
   left: 65%;
   -webkit-transform: translate(-50%, 50%) rotate(145.436deg);
@@ -539,6 +712,35 @@ body::-webkit-scrollbar {
   background: linear-gradient(275deg, #1890ff 0.99%, #ebd3fc 104.83%);
   -webkit-filter: blur(125px);
   filter: blur(125px);
+}
+@media screen and (min-width: 922px) {
+  .investment {
+    margin: 0 auto 8.44rem;
+  }
+  .investment__icon-box {
+    width: 5.9375rem;
+    height: 5.9375rem;
+    padding: 0.0625rem;
+  }
+  .investment__icon-box img {
+    width: 4rem;
+    height: 2.6875rem;
+  }
+  .investment__title {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 5.5rem;
+    color: #fff;
+    max-width: 85.4375rem;
+    margin-bottom: 2.5rem;
+  }
+  .investment__descr {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.875rem;
+    letter-spacing: 0.0225rem;
+    margin-bottom: 3.63rem;
+  }
 }
 
 .round {
@@ -1016,18 +1218,26 @@ body::-webkit-scrollbar {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 8.75rem;
+  margin-bottom: 7.5rem;
 }
 .metrics__title {
   text-align: center;
-  margin-bottom: 3.12rem;
+  margin-bottom: 2.37rem;
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 110%;
+  color: #fff;
 }
 .metrics__table {
-  display: grid;
-  grid-auto-rows: auto;
-  grid-template-columns: 1fr 1fr;
-  margin-bottom: 5rem;
-  gap: 1.87rem 1.94rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
 }
 .metrics .vm-button-primary {
   margin: 0 auto;
@@ -1035,42 +1245,65 @@ body::-webkit-scrollbar {
   width: -moz-fit-content;
   width: fit-content;
 }
+@media screen and (min-width: 768px) {
+  .metrics {
+    margin-bottom: 8.75rem;
+  }
+  .metrics__title {
+    text-align: center;
+    margin-bottom: 3.12rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .metrics__table {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 3.75rem;
+    gap: 1.87rem 1.94rem;
+  }
+}
 
 .metrics__table--item {
-  padding: 2.5rem;
+  padding: 2.5rem 0.75rem;
   border-radius: 1.25rem;
   overflow: hidden;
   background-color: #212a33;
 }
 .metrics__table--item-title {
   color: #fff;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 100%;
-  margin-bottom: 1.25rem;
+  line-height: 120.333%;
+  margin-bottom: 0.62rem;
+  letter-spacing: 0.0225rem;
 }
 .metrics__table--item-fund-title {
   color: #fff;
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  line-height: 100%;
-  margin-bottom: 1.25rem;
+  line-height: 120.333%;
+  margin-bottom: 0.62rem;
 }
 .metrics__table--item-descr {
   color: #c1cfdb;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 1.875rem;
-  letter-spacing: 0.03rem;
+  line-height: 133.333%;
+  letter-spacing: 0.0225rem;
 }
 .metrics__table--item.company-forecast {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  grid-column: span 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 1.87rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1080,6 +1313,11 @@ body::-webkit-scrollbar {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+.metrics__table--item.company-forecast .divider {
+  height: 1px;
+  width: 100%;
+  background-color: #313d49;
 }
 .metrics__table--item.current-funds, .metrics__table--item.fund-volume {
   -webkit-box-flex: 2;
@@ -1092,11 +1330,17 @@ body::-webkit-scrollbar {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 26.8125rem;
-  background-size: contain;
+  min-height: 19rem;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: #212a33;
+}
+.metrics__table--item.current-funds .divider, .metrics__table--item.fund-volume .divider {
+  height: 1px;
+  width: 8.75rem;
+  background-color: #313d49;
+  margin: 1.88rem 0;
 }
 .metrics__table--item.current-funds {
   background-image: url("../img/invest/metrics/metrics_blue.webp");
@@ -1104,17 +1348,93 @@ body::-webkit-scrollbar {
 .metrics__table--item.fund-volume {
   background-image: url("../img/invest/metrics/metrics_green.webp");
 }
+@media screen and (min-width: 768px) {
+  .metrics__table--item {
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background-color: #212a33;
+  }
+  .metrics__table--item.company-forecast {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    grid-column: span 2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 1.87rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .metrics__table--item.company-forecast div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .metrics__table--item.company-forecast .divider {
+    display: none;
+  }
+  .metrics__table--item.current-funds, .metrics__table--item.fund-volume {
+    min-height: 26.8125rem;
+  }
+  .metrics__table--item.current-funds .divider, .metrics__table--item.fund-volume .divider {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .metrics__table--item-title {
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 1.25rem;
+  }
+  .metrics__table--item-descr {
+    color: #c1cfdb;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.875rem;
+    letter-spacing: 0.03rem;
+  }
+  .metrics__table--item-fund-title {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 1.25rem;
+    text-wrap: nowrap;
+  }
+  .metrics__table--item.current-funds, .metrics__table--item.fund-volume {
+    min-height: 26.8125rem;
+  }
+  .metrics__table--item.current-funds .divider, .metrics__table--item.fund-volume .divider {
+    display: none;
+  }
+}
 
 .block-stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  gap: 0.63rem;
   margin-top: auto;
 }
 .block-stats__subtitle {
   color: #c1cfdb;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   font-weight: 400;
-  line-height: 128.571%;
+  line-height: 133.333%;
   letter-spacing: 0.0175rem;
-  margin-bottom: 1rem;
 }
 .block-stats__ring-blue, .block-stats__ring-green {
   display: -webkit-box;
@@ -1123,6 +1443,14 @@ body::-webkit-scrollbar {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 2.875rem !important;
+}
+.block-stats__ring-blue > .ldBar-label, .block-stats__ring-green > .ldBar-label {
+  margin-left: 0.4rem;
+  color: #fff;
+  font-size: 2.125rem;
+  font-weight: 700;
+  line-height: 120%;
 }
 .block-stats__ring-blue.ldBar path.mainline {
   stroke: #1890ff;
@@ -1136,38 +1464,28 @@ body::-webkit-scrollbar {
 .block-stats__ring-green.ldBar path.baseline {
   stroke: #314b33;
 }
-
-.ldBar {
-  position: relative;
-}
-
-.ldBar-label {
-  margin-left: 0.4rem;
-  color: #fff;
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 100%;
-}
-
-.ldBar-label:after {
-  content: "%";
-  display: inline;
-}
-
-.ldBar.no-percent .ldBar-label:after {
-  content: "";
-}
-
-.ldBar path.mainline {
-  stroke-width: 20;
-  stroke: #1890ff;
-  stroke-linecap: round;
-}
-
-.ldBar path.baseline {
-  stroke-width: 20;
-  stroke: #2a4c6b;
-  stroke-linecap: round;
+@media screen and (min-width: 768px) {
+  .block-stats {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.94rem;
+  }
+  .block-stats__subtitle {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 128.571%;
+    letter-spacing: 0.0175rem;
+  }
+  .block-stats__ring-blue, .block-stats__ring-green {
+    height: 4rem !important;
+  }
+  .block-stats__ring-blue > .ldBar-label, .block-stats__ring-green > .ldBar-label {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 100%;
+  }
 }
 
 .benefits {
@@ -1183,6 +1501,9 @@ body::-webkit-scrollbar {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 11.25rem;
+}
+.benefits.container {
+  padding: 0;
 }
 .benefits-title, .benefits-descr, .benefits-subtitle {
   max-width: 60.3125rem;
@@ -1210,16 +1531,25 @@ body::-webkit-scrollbar {
   line-height: 166.667%;
   letter-spacing: 0.0225rem;
 }
+@media screen and (min-width: 576px) {
+  .benefits.container {
+    padding: 0 0.9375rem;
+  }
+}
 
 .benefits__wrapper {
   padding: 0.94rem;
   overflow: hidden;
-  border-radius: 1.25rem;
   background-color: rgba(24, 31, 38, 0.8);
   width: 100%;
   height: 100%;
   min-height: 41.0625rem;
   max-height: 41.0625rem;
+}
+@media screen and (min-width: 576px) {
+  .benefits__wrapper {
+    border-radius: 1.25rem;
+  }
 }
 
 .benefits__list {
@@ -1304,7 +1634,7 @@ body::-webkit-scrollbar {
   line-height: 128.571%;
   letter-spacing: 0.0175rem;
   overflow-y: auto;
-  max-height: 6em;
+  max-height: 5.1em;
 }
 
 .benefits__list::-webkit-scrollbar,
@@ -1376,30 +1706,25 @@ body::-webkit-scrollbar {
   display: -ms-flexbox;
   display: flex;
   min-height: 38.25rem;
-  padding: 3.81rem 4.12rem 3.81rem 5.44rem;
-  margin-bottom: 11.25rem;
-  overflow: hidden;
+  margin-bottom: 7.5rem;
   border-radius: 1.25rem;
-  background-image: url("../img/invest/about-me/about-me_bg.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #212a33;
 }
 .about-me__box {
   max-width: 35.3125rem;
 }
 .about-me__box--title {
   color: #fff;
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 140%;
+  max-width: 13.5rem;
+  font-size: 2.375rem;
+  font-weight: 700;
+  line-height: 110%;
   letter-spacing: -0.06rem;
   margin-bottom: 1.33rem;
 }
 .about-me__box--descr {
-  color: #fff;
-  font-size: 1.125rem;
-  font-weight: 500;
+  color: #c1cfdb;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 140%;
   letter-spacing: -0.0225rem;
   margin-bottom: 1.5rem;
@@ -1407,16 +1732,113 @@ body::-webkit-scrollbar {
 .about-me__box--descr:last-child {
   margin: 0;
 }
-.about-me__photo {
+.about-me__img-mobile {
   position: absolute;
-  bottom: 0;
-  right: 3.06rem;
-  width: 24.0625rem;
-  height: 33.82306rem;
-  -webkit-transform: rotate(-0.426deg);
-          transform: rotate(-0.426deg);
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  top: -22%;
+  right: 0;
+  z-index: -5;
+  width: 12.625rem;
+  height: 14.86606rem;
+}
+@media screen and (min-width: 400px) {
+  .about-me__img-mobile {
+    top: -24%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about-me__img-mobile {
+    position: absolute;
+    top: -25%;
+    right: 13%;
+  }
+  .about-me__box {
+    max-width: 100%;
+  }
+  .about-me__box--title {
+    max-width: 35.3125rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.06rem;
+    margin-bottom: 1.33rem;
+  }
+  .about-me__box--descr {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.0225rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .about-me {
+    min-height: 38.25rem;
+    padding: 2.5rem 2rem;
+    margin-bottom: 11.25rem;
+    background-image: url("../img/invest/about-me/about-me__bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-color: #212a33;
+    overflow: hidden;
+  }
+  .about-me__img-mobile {
+    display: none;
+  }
+  .about-me__box {
+    max-width: 30.3125rem;
+  }
+  .about-me__box--title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: -0.06rem;
+    margin-bottom: 1.33rem;
+  }
+  .about-me__box--descr {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.0225rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about-me {
+    padding: 3.81rem 4.12rem 3.81rem 5.44rem;
+  }
+  .about-me__box {
+    max-width: 35.3125rem;
+  }
+}
+
+.roadmap-bg-mobile {
+  background-image: url("../img/invest/roadmap/roadmap__bg-tablet.webp");
+  background-repeat: no-repeat;
+  background-size: 48.9375rem;
+  background-position: 44% 19%;
+}
+@media screen and (min-width: 375px) {
+  .roadmap-bg-mobile {
+    background-position: 44% 15%;
+  }
+}
+@media screen and (min-width: 576px) {
+  .roadmap-bg-mobile {
+    background-size: 68.9375rem;
+    background-position: 45% 3%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .roadmap-bg-mobile {
+    background-size: 50rem;
+    background-position: 42% 0%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .roadmap-bg-mobile {
+    background: none;
+  }
 }
 
 .roadmap {
@@ -1431,28 +1853,19 @@ body::-webkit-scrollbar {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 57.1875rem;
-  padding: 3.75rem 1rem 1rem 1rem;
   margin-bottom: 1.25rem;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
   overflow: hidden;
   border-radius: 1.25rem;
-  background-image: url("../img/invest/roadmap/roadmap_bg.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-color: #212a33;
 }
 .roadmap__headbox {
   max-width: 60.625rem;
   text-align: center;
 }
 .roadmap__headbox-title {
-  margin-bottom: 1.25rem;
-  font-size: 3rem;
+  margin-bottom: 2.5rem;
+  font-size: 2.375rem;
   font-weight: 700;
-  line-height: normal;
+  line-height: 110%;
   color: #fff;
 }
 .roadmap__headbox-descr {
@@ -1461,6 +1874,49 @@ body::-webkit-scrollbar {
   line-height: 150%;
   color: #c1cfdb;
   letter-spacing: 0.02rem;
+  margin-bottom: 28.24rem;
+}
+@media screen and (min-width: 576px) {
+  .roadmap__headbox-descr {
+    margin-bottom: 38.24rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .roadmap__headbox-descr {
+    margin-bottom: 25.24rem;
+  }
+}
+@media screen and (min-width: 960px) {
+  .roadmap__headbox-descr {
+    margin-bottom: 30rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .roadmap {
+    height: 57.1875rem;
+    padding: 3.75rem 1rem 1rem 1rem;
+    margin-bottom: 1.25rem;
+    background-image: url("../img/invest/roadmap/roadmap_bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: #212a33;
+  }
+  .roadmap__headbox {
+    max-width: 60.625rem;
+  }
+  .roadmap__headbox-title {
+    margin-bottom: 1.25rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: normal;
+  }
+  .roadmap__headbox-descr {
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+  }
 }
 
 .roadmap__container {
@@ -1468,6 +1924,7 @@ body::-webkit-scrollbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 0.62rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1482,93 +1939,61 @@ body::-webkit-scrollbar {
   height: 100%;
 }
 .roadmap__container--road-line {
-  width: 10.40625rem;
-  height: 31.375rem;
-  margin-bottom: 3rem;
-  margin-right: 8rem;
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .roadmap__container--road-line {
+    display: block;
+    width: 10.40625rem;
+    height: 31.375rem;
+    margin-bottom: 3rem;
+    margin-right: 8rem;
+  }
 }
 
 .road-wrapper {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   gap: 0.13rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.road-statistics {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0.1875rem 0.5rem 0.3125rem 0.5rem;
-  -ms-flex-item-align: end;
-      align-self: end;
-  gap: 0.25rem;
   border-radius: 0.625rem;
-  background: rgba(30, 42, 53, 0.4);
+  border: 1px solid #212a33;
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
-.road-statistics__title {
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 120%;
-  text-align: center;
-  margin-bottom: 0.25rem;
+@media screen and (min-width: 768px) {
+  .road-wrapper {
+    max-width: 30rem;
+  }
 }
-.road-statistics__revenue {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.25rem;
-}
-.road-statistics__revenue p {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 0.1875rem 0.3125rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 120%;
-  color: #ed5959;
-  text-align: center;
-  text-wrap: nowrap;
-  border-radius: 0.3125rem;
-  background-color: rgba(141, 106, 104, 0.3);
-}
-.road-statistics__revenue p:last-child {
-  color: #8bda8e;
-  background-color: rgba(120, 248, 155, 0.3);
+@media screen and (min-width: 1200px) {
+  .road-wrapper {
+    position: absolute;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    border: none;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+  }
 }
 
 .road-fork {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0.1875rem 0.5rem 0.3125rem 0.5rem;
-  gap: 0.25rem;
+  padding: 0.62rem;
+  gap: 0.87rem;
   border-radius: 0.625rem;
   background: rgba(30, 42, 53, 0.4);
   -webkit-backdrop-filter: blur(15px);
@@ -1659,137 +2084,275 @@ body::-webkit-scrollbar {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.625rem;
-  padding: 0.1875rem 0rem;
+  padding: 0.1875rem 0.84rem;
   border-radius: 0.3125rem;
   background: rgba(255, 255, 255, 0.05);
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 120%;
   color: #fff;
-  text-wrap: nowrap;
+  text-wrap: wrap;
   text-align: center;
 }
+@media screen and (min-width: 1200px) {
+  .road-fork {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 0.25rem;
+  }
+  .road-fork--advantages {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+  }
+  .road-fork--advantages li {
+    padding: 0.1875rem 0.5rem 0.3125rem 0.5rem;
+    text-wrap: nowrap;
+  }
+}
 
-.start {
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translate(10%, -20%);
-          transform: translate(10%, -20%);
-}
-.start .road-fork--height::before {
-  content: url("../img/invest/roadmap/2021.svg");
-  position: absolute;
-  top: 30%;
-  left: -19%;
-  z-index: -1;
-  width: 2.5625rem;
-  height: 0.65231rem;
-}
-
-.v0-6 {
-  bottom: 8.5%;
-  left: 5%;
-  -webkit-transform: translate(10%, -20%);
-          transform: translate(10%, -20%);
-}
-.v0-6 .road-fork--header {
+.road-statistics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 1.25rem;
+  width: 100%;
+  padding: 0.1875rem 0.5rem 0.3125rem 0.5rem;
+  -ms-flex-item-align: end;
+      align-self: end;
+  border-radius: 0.625rem;
+  background: rgba(30, 42, 53, 0.4);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
 }
-.v0-6 .road-fork--height::after {
-  content: url("../img/invest/roadmap/v0.6.svg");
-  position: absolute;
-  top: -72%;
-  right: -52%;
-  z-index: -1;
-  width: 9.0625rem;
-  height: 1.9375rem;
+.road-statistics__title {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 120%;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+.road-statistics__revenue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.25rem;
+}
+.road-statistics__revenue p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.1875rem 0.3125rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 120%;
+  color: #ed5959;
+  text-align: center;
+  text-wrap: nowrap;
+  border-radius: 0.3125rem;
+  background-color: rgba(141, 106, 104, 0.3);
+}
+.road-statistics__revenue p:last-child {
+  color: #8bda8e;
+  background-color: rgba(120, 248, 155, 0.3);
+}
+@media screen and (min-width: 1200px) {
+  .road-statistics {
+    gap: 0.25rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 
-.v0-8 {
-  bottom: 10%;
-  right: 10.5%;
-  -webkit-transform: translate(10%, -20%);
-          transform: translate(10%, -20%);
-}
-.v0-8 .road-statistics {
-  -ms-flex-item-align: start;
-      align-self: start;
-}
-.v0-8 .road-fork--height::before {
-  content: url("../img/invest/roadmap/v0.8.svg");
-  position: absolute;
-  top: 40%;
-  left: -62%;
-  z-index: -1;
-  width: 11.25rem;
-  height: 2.125rem;
+@media screen and (min-width: 1200px) {
+  .start {
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(10%, -20%);
+            transform: translate(10%, -20%);
+  }
+  .start .road-fork--height::before {
+    content: url("../img/invest/roadmap/2021.svg");
+    position: absolute;
+    top: 30%;
+    left: -19%;
+    z-index: -1;
+    width: 2.5625rem;
+    height: 0.65231rem;
+  }
 }
 
-.v1-0 {
-  top: 34%;
-  left: -0.5%;
-  -webkit-transform: translate(10%, -20%);
-          transform: translate(10%, -20%);
+@media screen and (min-width: 1200px) {
+  .v0-6 {
+    bottom: 8.5%;
+    left: 5%;
+    -webkit-transform: translate(10%, -20%);
+            transform: translate(10%, -20%);
+  }
+  .v0-6 .road-fork--header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .v0-6 .road-fork--height::after {
+    content: url("../img/invest/roadmap/v0.6.svg");
+    position: absolute;
+    top: -51%;
+    right: -42%;
+    z-index: -1;
+    width: 9.0625rem;
+    height: 1.9375rem;
+  }
 }
-.v1-0 .road-fork--header {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-.v1-0 .road-fork--height::after {
-  content: url("../img/invest/roadmap/v1.0.svg");
-  position: absolute;
-  top: 40%;
-  right: -30%;
-  z-index: -1;
-  width: 7.875rem;
-  height: 5.9375rem;
+@media screen and (min-width: 1280px) {
+  .v0-6 .road-fork--height::after {
+    top: -61%;
+    right: -42%;
+  }
 }
 
-.v5-0 {
-  top: 26.5%;
-  right: 5.5%;
-  -webkit-transform: translate(10%, -20%);
-          transform: translate(10%, -20%);
+@media screen and (min-width: 1200px) {
+  .v0-8 {
+    bottom: 10%;
+    right: 10.5%;
+    -webkit-transform: translate(10%, -20%);
+            transform: translate(10%, -20%);
+  }
+  .v0-8 .road-statistics {
+    -ms-flex-item-align: start;
+        align-self: start;
+  }
+  .v0-8 .road-fork--height::before {
+    content: url("../img/invest/roadmap/v0.8.svg");
+    position: absolute;
+    top: 40%;
+    left: -46%;
+    z-index: -1;
+    width: 11.25rem;
+    height: 2.125rem;
+    -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
+  }
 }
-.v5-0 .road-statistics {
-  -ms-flex-item-align: start;
-      align-self: start;
+@media screen and (min-width: 1280px) {
+  .v0-8 .road-fork--height::after {
+    left: -62%;
+  }
 }
-.v5-0 .road-fork--height::after {
-  content: url("../img/invest/roadmap/v5.0.svg");
-  position: absolute;
-  top: -25%;
-  left: -14%;
-  z-index: -1;
-  width: 3.96875rem;
-  height: 1.07838rem;
+
+@media screen and (min-width: 1200px) {
+  .v1-0 {
+    top: 34%;
+    left: -2.5%;
+    -webkit-transform: translate(10%, -20%);
+            transform: translate(10%, -20%);
+  }
+  .v1-0 .road-fork--header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .v1-0 .road-fork--height::after {
+    content: url("../img/invest/roadmap/v1.0.svg");
+    position: absolute;
+    top: 12%;
+    right: -23%;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    z-index: -1;
+    width: 7.875rem;
+    height: 5.9375rem;
+  }
 }
-.v5-0 .road-fork--advantages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+@media screen and (min-width: 1280px) {
+  .v1-0 .road-fork--height::after {
+    top: 12%;
+    right: -23%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .v5-0 {
+    max-width: 30rem;
+    top: 22.5%;
+    right: 5.5%;
+    -webkit-transform: translate(10%, -20%);
+            transform: translate(10%, -20%);
+  }
+  .v5-0 .road-statistics {
+    -ms-flex-item-align: start;
+        align-self: start;
+  }
+  .v5-0 .road-fork--height::after {
+    content: url("../img/invest/roadmap/v5.0.svg");
+    position: absolute;
+    top: 0%;
+    left: -9%;
+    z-index: -1;
+    width: 3.96875rem;
+    height: 1.07838rem;
+  }
+  .v5-0 .road-fork--advantages {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .v5-0 .road-fork--height::after {
+    left: -9%;
+  }
 }
 
 .wartime {
   position: relative;
-  margin-bottom: 11.25rem;
+  margin-bottom: 5.67rem;
 }
 .wartime__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-radius: 1.25rem;
   overflow: hidden;
   border: 1px solid #313d49;
   background-color: #181f26;
 }
 .wartime__img {
-  min-width: 30.0625rem;
-  min-height: 17.25rem;
+  min-width: 20.75rem;
+  min-height: 10.75rem;
+  width: 100%;
+  height: auto;
 }
 .wartime__box {
   display: -webkit-box;
@@ -1800,13 +2363,13 @@ body::-webkit-scrollbar {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 1.25rem;
-  padding: 2.75rem 6.25rem 2.12rem 1.13rem;
+  padding: 1.88rem 1.25rem;
 }
 .wartime__title {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  line-height: 125%;
+  line-height: 133.333%;
 }
 .wartime__descr {
   color: #fff;
@@ -1829,4 +2392,34 @@ body::-webkit-scrollbar {
   background: linear-gradient(275deg, #1890ff 0.99%, #ebd3fc 104.83%);
   -webkit-filter: blur(125px);
           filter: blur(125px);
+}
+@media screen and (min-width: 960px) {
+  .wartime {
+    margin-bottom: 11.25rem;
+  }
+  .wartime__wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .wartime__box {
+    padding: 2.75rem 2.25rem 2.12rem 1.13rem;
+  }
+  .wartime__img {
+    aspect-ratio: 30.0625/17.25;
+    max-width: 30.0625rem;
+    max-height: 17.25rem;
+  }
+  .wartime__title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 125%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .wartime__box {
+    padding: 2.75rem 6.25rem 2.12rem 1.13rem;
+  }
 }/*# sourceMappingURL=main.css.map */

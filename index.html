@@ -32,32 +32,34 @@
     <main>
       <!-- block 1 -->
       <section class="hero">
-        <h1 class="hero__title">Все только начинается.</h1>
-        <p class="hero__txt">Посмотрите на YouTube</p>
-        <h2 class="title hero__subtitle">Что такое Vymex?</h2>
-        <div class="hero__video">
-          <button class="hero__video-button" data-modal-open>
-            <svg
-              width="16"
-              height="18"
-              viewBox="0 0 16 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                opacity="0.6"
-                d="M15.1656 8.13542C15.8326 8.52025 15.8326 9.48297 15.1656 9.86779L1.85299 17.5481C1.18632 17.9328 0.353267 17.4516 0.353267 16.682L0.353268 1.32125C0.353268 0.551594 1.18632 0.0704523 1.85299 0.455068L15.1656 8.13542Z"
-                fill="white"
-              ></path>
-            </svg>
-          </button>
+        <div class="container">
+          <h1 class="hero__title">Все только начинается.</h1>
+          <p class="hero__txt">Посмотрите на YouTube</p>
+          <h2 class="title hero__subtitle">Что такое Vymex?</h2>
+          <div class="hero__video">
+            <button class="hero__video-button" data-modal-open>
+              <svg
+                width="16"
+                height="18"
+                viewBox="0 0 16 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  opacity="0.6"
+                  d="M15.1656 8.13542C15.8326 8.52025 15.8326 9.48297 15.1656 9.86779L1.85299 17.5481C1.18632 17.9328 0.353267 17.4516 0.353267 16.682L0.353268 1.32125C0.353268 0.551594 1.18632 0.0704523 1.85299 0.455068L15.1656 8.13542Z"
+                  fill="white"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
-      <!-- block 2 -->
+      <!-- block 2 solution -->
       <section class="solution container">
         <div class="solution__first">
-          <h2 class="solution__first-title title">
+          <h2 class="solution__first-title">
             Vymex создал решение, которое полностью изменит среду, разделив нишу
             «ПО для бизнеса» на:
           </h2>
@@ -83,7 +85,7 @@
         </div>
       </section>
 
-      <!-- block 3 -->
+      <!-- block 3 investment -->
       <section class="investment">
         <div class="investment__icon-box">
           <div class="investment__icon-box-wrapper">
@@ -112,7 +114,7 @@
         <div class="investment__bg-light" />
       </section>
 
-      <!-- block 4 -->
+      <!-- block 4 round -->
       <section class="container round">
         <p class="round__subtitle">Фондам</p>
         <div class="round__header">
@@ -274,8 +276,7 @@
         <div class="round__bg-light"></div>
       </section>
 
-      <!-- block 5 -->
-
+      <!-- block 5 metrics -->
       <section class="container metrics">
         <h2 class="metrics__title title">Показатели раунда.</h2>
 
@@ -288,6 +289,7 @@
                 года.
               </p>
             </div>
+            <span class="divider"></span>
             <div class="metrics__table--item-container">
               <h3 class="metrics__table--item-title">$1 623 000</h3>
               <p class="metrics__table--item-descr">
@@ -301,7 +303,7 @@
             <p class="metrics__table--item-descr">
               Привлечено на данный момент
             </p>
-
+            <span class="divider"></span>
             <div class="block-stats">
               <p class="block-stats__subtitle">
                 Компании уже куплено инвесторами
@@ -320,9 +322,9 @@
             <h3 class="metrics__table--item-fund-title">$2 375 000</h3>
             <p class="metrics__table--item-descr">Доступный объем для фондов</p>
 
+            <span class="divider"></span>
             <div class="block-stats">
               <p class="block-stats__subtitle">Будет еще продано</p>
-
               <div
                 class="block-stats__ring-green ldBar"
                 data-preset="circle"
@@ -335,9 +337,8 @@
         </div>
         <button class="vm-button-primary">Смотреть финансовую модель</button>
       </section>
-      <!-- block 6 -->
-
-      <section class="container">
+      <!-- block 6 roadmap-->
+      <section class="container roadmap-bg-mobile">
         <div class="roadmap">
           <div class="roadmap__headbox">
             <h2 class="roadmap__headbox-title">Дорожная карта продукта.</h2>
@@ -354,7 +355,7 @@
             <img
               class="roadmap__container--road-line"
               src="./img/invest/roadmap/vector_road.svg"
-              alt=""
+              alt="roadmap line"
               width="10.40625rem"
               height="31.375rem"
             />
@@ -472,8 +473,7 @@
           </div>
         </div>
       </section>
-
-      <!-- block 7 -->
+      <!-- block 7 wartime -->
       <section class="container wartime">
         <div class="wartime__wrapper">
           <img
@@ -498,7 +498,7 @@
         </div>
         <div class="wartime__bg-light" />
       </section>
-      <!-- block 8 -->
+      <!-- block 8  benefits-->
       <section class="benefits container">
         <h2 class="benefits-title">Какую пользу создает Vymex и для кого.</h2>
         <p class="benefits-descr">
@@ -678,7 +678,7 @@
         </div>
         <div class="benefits__bg-light"></div>
       </section>
-      <!-- block 9 -->
+      <!-- block 10 about-me -->
       <section class="container">
         <div class="about-me">
           <div class="about-me__box">
@@ -702,9 +702,9 @@
               создавать новые рынки и перестраивать старые.
             </p>
           </div>
-          <img class="about-me__photo"
-          src="./img/invest/about-me/about-me_ruslan.webp"" alt="Photo Ruslan"
-          width=" 24.0625rem" height="33.82306rem" />
+          <img class="about-me__img-mobile"
+          src="./img/invest/about-me/about-me__img-mobile.webp"" alt="Photo
+          Ruslan" width=" 12.625rem" height="14.86606rem" />
         </div>
       </section>
     </main>

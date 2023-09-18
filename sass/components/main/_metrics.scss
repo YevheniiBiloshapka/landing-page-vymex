@@ -2,56 +2,78 @@
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 8.75rem;
+  margin-bottom: 7.5rem;
   &__title {
     text-align: center;
-    margin-bottom: 3.12rem;
+    margin-bottom: 2.37rem;
+    @include font($fs-38, 700, 110%);
+    color: $cl-text-primary;
   }
 
   &__table {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 5rem;
-
-    gap: 1.87rem 1.94rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
   }
   & .vm-button-primary {
     margin: 0 auto;
     width: fit-content;
   }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8.75rem;
+    &__title {
+      text-align: center;
+      margin-bottom: 3.12rem;
+      @include font($fs-48, 700);
+    }
+    &__table {
+      display: grid;
+      grid-auto-rows: auto;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 3.75rem;
+      gap: 1.87rem 1.94rem;
+    }
+  }
 }
 
 .metrics__table--item {
-  padding: 2.5rem;
+  padding: 2.5rem 0.75rem;
   border-radius: 1.25rem;
   overflow: hidden;
   background-color: $cl-bg-paper;
   &-title {
     color: $cl-text-primary;
-    @include font($fs-48, 700, 100%);
-    margin-bottom: 1.25rem;
+    @include font(2.5rem, 700, 120.333%);
+    margin-bottom: 0.62rem;
+    letter-spacing: 0.0225rem;
   }
   &-fund-title {
     color: $cl-text-primary;
-    @include font($fs-80, 700, 100%);
-    margin-bottom: 1.25rem;
+    @include font(2.5rem, 700, 120.333%);
+    margin-bottom: 0.62rem;
   }
   &-descr {
     color: $cl-text-secondary;
-    @include font($fs-24, 400, 1.875rem);
-    letter-spacing: 0.03rem;
+    @include font($fs-18, 400, 133.333%);
+    letter-spacing: 0.0225rem;
   }
 
   &.company-forecast {
-    flex: 1; //this
-    grid-column: span 2;
+    flex: 1;
     display: flex;
+    flex-direction: column;
     gap: 1.87rem;
     height: fit-content;
 
     & div {
       flex: 1;
+    }
+    & .divider {
+      height: 1px;
+      width: 100%;
+      background-color: $cl-divider-dark;
     }
   }
 
@@ -61,11 +83,17 @@
     display: flex;
     flex-direction: column;
 
-    min-height: 26.8125rem;
-    background-size: contain;
+    min-height: 19rem;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
     background-color: $cl-bg-paper;
+    & .divider {
+      height: 1px;
+      width: 8.75rem;
+      background-color: $cl-divider-dark;
+      margin: 1.88rem 0;
+    }
   }
   &.current-funds {
     background-image: url("../img/invest/metrics/metrics_blue.webp");
@@ -74,21 +102,88 @@
   &.fund-volume {
     background-image: url("../img/invest/metrics/metrics_green.webp");
   }
+  @media screen and (min-width: 768px) {
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background-color: $cl-bg-paper;
+
+    &.company-forecast {
+      flex: 1; //this
+      grid-column: span 2;
+      display: flex;
+      flex-direction: row;
+      gap: 1.87rem;
+      height: fit-content;
+
+      & div {
+        flex: 1;
+      }
+      & .divider {
+        display: none;
+      }
+    }
+
+    &.current-funds,
+    &.fund-volume {
+      min-height: 26.8125rem;
+      & .divider {
+        display: none;
+      }
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &-title {
+      color: $cl-text-primary;
+      @include font($fs-48, 700, 100%);
+      margin-bottom: 1.25rem;
+    }
+    &-descr {
+      color: $cl-text-secondary;
+      @include font($fs-24, 400, 1.875rem);
+      letter-spacing: 0.03rem;
+    }
+
+    &-fund-title {
+      color: $cl-text-primary;
+      @include font($fs-80, 700, 100%);
+      margin-bottom: 1.25rem;
+      text-wrap: nowrap;
+    }
+    &.current-funds,
+    &.fund-volume {
+      min-height: 26.8125rem;
+      //   background-size: contain;
+      & .divider {
+        display: none;
+      }
+    }
+  }
 }
 
 .block-stats {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.63rem;
   margin-top: auto;
+
   &__subtitle {
     color: $cl-text-secondary;
-    @include font($fs-14, 400, 128.571%);
+    @include font($fs-18, 400, 133.333%);
     letter-spacing: 0.0175rem;
-    margin-bottom: 1rem;
   }
 
   &__ring-blue,
   &__ring-green {
     display: flex;
     align-items: center;
+    height: 2.875rem !important;
+
+    & > .ldBar-label {
+      margin-left: 0.4rem;
+      color: $cl-text-primary;
+      @include font($fs-34, 700, 120%);
+    }
   }
   &__ring-blue {
     &.ldBar path.mainline {
@@ -106,30 +201,21 @@
       stroke: #314b33;
     }
   }
-}
 
-.ldBar {
-  position: relative;
-}
-.ldBar-label {
-  margin-left: 0.4rem;
-  color: $cl-text-primary;
-  @include font($fs-48, 700, 100%);
-}
-.ldBar-label:after {
-  content: "%";
-  display: inline;
-}
-.ldBar.no-percent .ldBar-label:after {
-  content: "";
-}
-.ldBar path.mainline {
-  stroke-width: 20;
-  stroke: $cl-primary-main;
-  stroke-linecap: round;
-}
-.ldBar path.baseline {
-  stroke-width: 20;
-  stroke: #2a4c6b;
-  stroke-linecap: round;
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    gap: 0.94rem;
+
+    &__subtitle {
+      @include font($fs-14, 400, 128.571%);
+      letter-spacing: 0.0175rem;
+    }
+    &__ring-blue,
+    &__ring-green {
+      height: 4rem !important;
+      & > .ldBar-label {
+        @include font($fs-48, 700, 100%);
+      }
+    }
+  }
 }

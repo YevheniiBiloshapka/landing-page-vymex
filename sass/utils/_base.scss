@@ -1,12 +1,12 @@
-// @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-
 body {
   font-family: "Inter";
   font-style: normal;
-  //   font-size: 16px;
   color: $cl-text-primary;
   background-color: $cl-bg-default;
   letter-spacing: 0.03em;
+  overflow-x: hidden;
+}
+main {
   overflow-x: hidden;
 }
 body.modal-open {
@@ -114,4 +114,30 @@ body::-webkit-scrollbar {
   font-style: normal;
   src: url("../fonts/Inter-Black.ttf") format("truetype");
   font-weight: 900;
+}
+
+.ldBar {
+  position: relative;
+}
+.ldBar-label {
+  margin-left: 0.4rem;
+  color: $cl-text-primary;
+  @include font($fs-48, 700, 100%);
+}
+.ldBar-label:after {
+  content: "%";
+  display: inline;
+}
+.ldBar.no-percent .ldBar-label:after {
+  content: "";
+}
+.ldBar path.mainline {
+  stroke-width: 20;
+  stroke: $cl-primary-main;
+  stroke-linecap: round;
+}
+.ldBar path.baseline {
+  stroke-width: 20;
+  stroke: #2a4c6b;
+  stroke-linecap: round;
 }

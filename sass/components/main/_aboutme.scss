@@ -2,29 +2,23 @@
   position: relative;
   display: flex;
   min-height: 38.25rem;
-  padding: 3.81rem 4.12rem 3.81rem 5.44rem;
-  margin-bottom: 11.25rem;
 
-  overflow: hidden;
+  margin-bottom: 7.5rem;
+
   border-radius: $br-20;
-
-  background-image: url("../img/invest/about-me/about-me_bg.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  //   background-position: ;
-  background-color: $cl-bg-paper;
 
   &__box {
     max-width: 35.3125rem;
     &--title {
       color: $cl-text-primary;
-      @include font($fs-48, 500, 140%);
+      max-width: 13.5rem;
+      @include font($fs-38, 700, 110%);
       letter-spacing: -0.06rem;
       margin-bottom: 1.33rem;
     }
     &--descr {
-      color: $cl-text-primary;
-      @include font($fs-18, 500, 140%);
+      color: $cl-text-secondary;
+      @include font($fs-16, 400, 140%);
       letter-spacing: -0.0225rem;
       margin-bottom: 1.5rem;
       &:last-child {
@@ -33,14 +27,75 @@
     }
   }
 
-  &__photo {
+  &__img-mobile {
     position: absolute;
-    bottom: 0;
-    right: 3.06rem;
+    top: -22%;
+    right: 0;
+    z-index: -5;
+    width: 12.625rem;
+    height: 14.86606rem;
+    @media screen and (min-width: 400px) {
+      top: -24%;
+    }
+  }
 
-    width: 24.0625rem;
-    height: 33.82306rem;
-    transform: rotate(-0.426deg);
-    flex-shrink: 0;
+  @media screen and (min-width: 768px) {
+    &__img-mobile {
+      position: absolute;
+      top: -25%;
+      right: 13%;
+    }
+
+    &__box {
+      max-width: 100%;
+      &--title {
+        max-width: 35.3125rem;
+        @include font($fs-48, 700, 140%);
+        letter-spacing: -0.06rem;
+        margin-bottom: 1.33rem;
+      }
+      &--descr {
+        @include font($fs-18, 400, 140%);
+        letter-spacing: -0.0225rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    min-height: 38.25rem;
+    padding: 2.5rem 2rem;
+    margin-bottom: 11.25rem;
+
+    background-image: url("../img/invest/about-me/about-me__bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-color: $cl-bg-paper;
+    overflow: hidden;
+
+    &__img-mobile {
+      display: none;
+    }
+    &__box {
+      max-width: 30.3125rem;
+      &--title {
+        @include font($fs-48, 700, 140%);
+        letter-spacing: -0.06rem;
+        margin-bottom: 1.33rem;
+      }
+      &--descr {
+        @include font($fs-18, 400, 140%);
+        letter-spacing: -0.0225rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    padding: 3.81rem 4.12rem 3.81rem 5.44rem;
+    &__box {
+      max-width: 35.3125rem;
+    }
   }
 }

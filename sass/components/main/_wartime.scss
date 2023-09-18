@@ -1,26 +1,29 @@
 .wartime {
   position: relative;
-  margin-bottom: 11.25rem;
+  margin-bottom: 5.67rem;
   &__wrapper {
     display: flex;
+    flex-direction: column;
     border-radius: $br-20;
     overflow: hidden;
     border: 1px solid $cl-divider-dark;
     background-color: $cl-bg-default;
   }
   &__img {
-    min-width: 30.0625rem;
-    min-height: 17.25rem;
+    min-width: 20.75rem;
+    min-height: 10.75rem;
+    width: 100%;
+    height: auto;
   }
   &__box {
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding: 2.75rem 6.25rem 2.12rem 1.13rem;
+    padding: 1.88rem 1.25rem;
   }
   &__title {
     color: $cl-text-primary;
-    @include font($fs-24, 700, 125%);
+    @include font($fs-18, 700, 133.333%);
   }
   &__descr {
     color: $cl-text-primary;
@@ -40,5 +43,29 @@
     opacity: 0.3;
     background: linear-gradient(275deg, #1890ff 0.99%, #ebd3fc 104.83%);
     filter: blur(125px);
+  }
+
+  @media screen and (min-width: 960px) {
+    margin-bottom: 11.25rem;
+    &__wrapper {
+      flex-direction: row;
+    }
+    &__box {
+      padding: 2.75rem 2.25rem 2.12rem 1.13rem;
+    }
+    &__img {
+      aspect-ratio: 30.0625/17.25;
+      max-width: 30.0625rem;
+      max-height: 17.25rem;
+    }
+    &__title {
+      color: $cl-text-primary;
+      @include font($fs-24, 700, 125%);
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &__box {
+      padding: 2.75rem 6.25rem 2.12rem 1.13rem;
+    }
   }
 }

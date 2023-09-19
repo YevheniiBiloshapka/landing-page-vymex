@@ -3,24 +3,55 @@
   margin-bottom: 11.75rem;
   &__subtitle {
     color: $cl-text-disabled;
-    @include font($fs-18, 400);
-    letter-spacing: 0.0225rem;
-    margin-bottom: 1.44rem;
+    @include font($fs-15, 400);
+    letter-spacing: 0.01875rem;
+    margin-bottom: 1.25rem;
   }
   &__header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.88rem;
-    margin-bottom: 3.12rem;
+    flex-direction: column;
+    gap: 0.62rem;
+    margin-bottom: 2.5rem;
 
     &-title {
-      width: 23.125rem;
+      @include font($fs-24, 700, 120%);
+      color: $cl-text-primary;
     }
     &-descr {
       color: $cl-text-secondary;
-      @include font($fs-18, 400, 1.875rem);
+      @include font($fs-16, 400, 175%);
+      letter-spacing: 0.02rem;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    &__subtitle {
+      @include font($fs-18, 400);
       letter-spacing: 0.0225rem;
+      margin-bottom: 1.44rem;
+    }
+
+    &__header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.88rem;
+      margin-bottom: 3.12rem;
+
+      &-title {
+        width: 23.125rem;
+        @include font($fs-34, 700);
+      }
+    }
+  }
+  @media screen and (min-width: 992px) {
+    &__header {
+      &-title {
+        @include font($fs-48, 700);
+      }
+      &-descr {
+        @include font($fs-18, 400, 166.667%);
+        letter-spacing: 0.0225rem;
+      }
     }
   }
 }

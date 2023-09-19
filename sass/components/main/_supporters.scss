@@ -224,10 +224,18 @@
   border: 1px solid rgba(255, 252, 0, 0.2);
 }
 .company-item.medium {
+  display: none;
   background-image: url("../img/invest/supporters/bg_card-medium.webp");
   border: 1px solid rgba(0, 0, 0, 0.2);
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 }
 .company-item.fb-messenger {
+  display: none;
   background-image: url("../img/invest/supporters/bg_card-fb-messenger.webp");
   border: 1px solid rgba(162, 52, 253, 0.2);
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 }

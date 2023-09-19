@@ -1,0 +1,233 @@
+.cn-support {
+  margin-bottom: 15.5rem;
+}
+
+.supporters {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  &-description {
+    color: $cl-text-secondary;
+    @include font($fs-16, 400, 175%);
+    letter-spacing: 0.02rem;
+  }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    &-description {
+      flex: 1;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    gap: 1.87rem;
+    margin-bottom: 1.87rem;
+    &-description {
+      flex: 2;
+    }
+  }
+}
+.supporters-info {
+  &-title {
+    color: $cl-text-primary;
+    @include font($fs-38, 700, 110%);
+    margin-bottom: 1.88rem;
+  }
+  &-registered {
+    color: $cl-primary-main;
+    @include font($fs-18, 700, 155.556%);
+    margin-bottom: 0.63rem;
+  }
+  @media screen and (min-width: 768px) {
+    flex: 1;
+  }
+  @media screen and (min-width: 1200px) {
+    flex: 3;
+    &-title {
+      color: $cl-text-primary;
+      @include font($fs-48, 700, 110%);
+      margin-bottom: 2.5rem;
+    }
+    &-registered {
+      color: $cl-primary-main;
+      @include font($fs-24, 700, 125%);
+      margin-bottom: 1.25rem;
+    }
+  }
+}
+.beta-stats {
+  display: flex;
+  gap: 0.5rem;
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 10rem;
+    padding: 0.625rem 0.9375rem;
+
+    border-radius: $fs-20;
+    background: $cl-bg-paper;
+
+    &-title {
+      color: $cl-text-secondary;
+      @include font($fs-16, 400, 175%);
+      letter-spacing: 0.02rem;
+    }
+    &-descr {
+      color: $cl-primary-main;
+      @include font(2rem, 700);
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 1.88rem;
+    &__item {
+      padding: 0.9375rem 1.25rem;
+      width: 16.8125rem;
+      &-title {
+        @include font($fs-18, 400, 166.667%);
+        letter-spacing: 0.0225rem;
+      }
+      &-descr {
+        @include font($fs-48, 700);
+      }
+    }
+  }
+}
+
+.cn-support-button {
+  display: inline-flex;
+  padding: 0.9375rem 1.5625rem;
+  align-items: center;
+  border-radius: $br-200;
+  background: $cl-primary-light-100;
+  cursor: pointer;
+
+  color: $cl-primary-main;
+  @include font($fs-15, 400);
+  letter-spacing: 0.01875rem;
+  border: none;
+
+  @include transition;
+
+  &:hover {
+    background: $cl-primary-main;
+    color: $cl-text-primary;
+  }
+}
+
+//company social list
+
+.company {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__add-button {
+    display: flex;
+    padding: 0.9375rem;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 3.75rem;
+
+    border-radius: $br-200;
+    background-color: $cl-primary-light-100;
+
+    color: $cl-primary-main;
+    @include font($fs-15, 600);
+    letter-spacing: 0.01875rem;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.62rem;
+    margin-bottom: 2.5rem;
+  }
+  &-item {
+    display: flex;
+    padding: 1.25rem;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 23.125rem;
+
+    border-radius: $br-20;
+
+    background-color: $cl-bg-paper;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+  }
+  &-logo {
+    display: flex;
+
+    align-items: flex-start;
+    align-self: stretch;
+  }
+  &-name {
+    align-self: center;
+    margin-left: 1.25rem;
+    color: $cl-text-primary;
+    @include font($fs-24, 700, 125%);
+  }
+  &-link {
+    margin-left: auto;
+    fill: #4a5a6a;
+
+    @include transition;
+    &:hover {
+      fill: $cl-primary-main;
+    }
+  }
+
+  &-description {
+    color: $cl-text-secondary;
+    @include font($fs-14, 400, 128.571%);
+    letter-spacing: 0.0175rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    &__add-button {
+      background-color: transparent;
+      align-self: end;
+      margin-bottom: 30px;
+      &:hover {
+        background-color: $cl-primary-light-100;
+      }
+    }
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1.88rem;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &-list {
+      grid-template-columns: repeat(3, 1fr); /* Две равные колонки */
+    }
+  }
+}
+
+.company-item.spotify {
+  background-image: url("../img/invest/supporters/bg_card-spotify.webp");
+  border: 1px solid rgba(30, 215, 96, 0.2);
+}
+.company-item.google {
+  background-image: url("../img/invest/supporters/bg_card-google.webp");
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.company-item.reddit {
+  background-image: url("../img/invest/supporters/bg_card-reddit.webp");
+  border: 1px solid rgba(255, 69, 0, 0.2);
+}
+.company-item.snapchat {
+  background-image: url("../img/invest/supporters/bg_card-snapchat.webp");
+  border: 1px solid rgba(255, 252, 0, 0.2);
+}
+.company-item.medium {
+  background-image: url("../img/invest/supporters/bg_card-medium.webp");
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.company-item.fb-messenger {
+  background-image: url("../img/invest/supporters/bg_card-fb-messenger.webp");
+  border: 1px solid rgba(162, 52, 253, 0.2);
+}

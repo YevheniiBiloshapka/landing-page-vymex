@@ -60,6 +60,7 @@
   display: flex;
   width: 100%;
   min-height: 35.875rem;
+  overflow-x: scroll;
 
   background-color: $cl-bg-default;
   outline: 2px solid rgba(49, 61, 73, 0.5);

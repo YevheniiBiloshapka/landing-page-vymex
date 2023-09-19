@@ -429,4 +429,6 @@
   opacity: 0.3;
   background: #ab95ff;
   filter: blur(250px);
+  @media screen and (min-width: 576px) {
+  }
 }

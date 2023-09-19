@@ -51,6 +51,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -1260,7 +1264,6 @@ body::-webkit-scrollbar {
   -webkit-filter: blur(250px);
           filter: blur(250px);
 }
-
 .metrics {
   display: -webkit-box;
   display: -ms-flexbox;

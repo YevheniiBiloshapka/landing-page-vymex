@@ -49,14 +49,16 @@
     margin-bottom: 11.25rem;
     &__wrapper {
       flex-direction: row;
+      align-items: center;
     }
     &__box {
-      padding: 2.75rem 2.25rem 2.12rem 1.13rem;
+      width: 35rem;
     }
     &__img {
-      aspect-ratio: 30.0625/17.25;
       max-width: 30.0625rem;
       max-height: 17.25rem;
+      width: 30.0625rem;
+      height: 17.25rem;
     }
     &__title {
       color: $cl-text-primary;
@@ -65,7 +67,7 @@
   }
   @media screen and (min-width: 1200px) {
     &__box {
-      padding: 2.75rem 6.25rem 2.12rem 1.13rem;
+      width: 32rem;
     }
   }
 }

@@ -239,8 +239,13 @@
       min-width: 100%;
     }
     @media screen and (min-width: 1000px) {
-      min-width: 380px;
-      max-width: 380px;
+      min-width: 343px;
+    }
+    @media screen and (min-width: 1200px) {
+      min-width: 343px;
+      &:last-child {
+        padding-right: 0;
+      }
     }
   }
 

@@ -38,7 +38,7 @@
 
   @media screen and (min-width: 922px) {
     flex-direction: row;
-    gap: 1.87rem;
+    gap: 30px;
     margin-bottom: 12.62rem;
     &__first {
       flex: 1 0 13rem;
@@ -53,11 +53,8 @@
       }
       &-txt {
         flex: 1;
-        border-radius: $br-20;
-        background-color: $cl-bg-paper;
         padding: 1.25rem;
         @include font(0.9375rem, 500, 1.25rem);
-        color: $cl-text-primary;
       }
     }
     &__second {
@@ -65,10 +62,21 @@
       margin-top: 0.69rem;
 
       & p {
-        color: $cl-text-secondary;
         @include font($fs-18, 400, 166.667%);
         letter-spacing: 0.0225rem;
       }
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    &__first {
+      flex: 3 0 5rem;
+      &-title {
+        letter-spacing: -1.8px;
+      }
+    }
+    &__second {
+      flex: 2 0 4rem;
+      margin-top: 0.69rem;
     }
   }
 }

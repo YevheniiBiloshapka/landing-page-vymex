@@ -21,7 +21,7 @@
   }
   @media screen and (min-width: 1200px) {
     gap: 1.87rem;
-    margin-bottom: 1.87rem;
+    margin-bottom: 7.5rem;
     &-description {
       flex: 2;
     }
@@ -31,7 +31,6 @@
   &-title {
     color: $cl-text-primary;
     @include font($fs-38, 700, 110%);
-    margin-bottom: 1.88rem;
   }
   &-registered {
     color: $cl-primary-main;
@@ -40,6 +39,9 @@
   }
   @media screen and (min-width: 768px) {
     flex: 1;
+    &-title {
+      margin-bottom: 1.88rem;
+    }
   }
   @media screen and (min-width: 1200px) {
     flex: 3;
@@ -52,44 +54,6 @@
       color: $cl-primary-main;
       @include font($fs-24, 700, 125%);
       margin-bottom: 1.25rem;
-    }
-  }
-}
-.beta-stats {
-  display: flex;
-  gap: 0.5rem;
-  &__item {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 10rem;
-    padding: 0.625rem 0.9375rem;
-
-    border-radius: $fs-20;
-    background: $cl-bg-paper;
-
-    &-title {
-      color: $cl-text-secondary;
-      @include font($fs-16, 400, 175%);
-      letter-spacing: 0.02rem;
-    }
-    &-descr {
-      color: $cl-primary-main;
-      @include font(2rem, 700);
-    }
-  }
-
-  @media screen and (min-width: 1200px) {
-    gap: 1.88rem;
-    &__item {
-      padding: 0.9375rem 1.25rem;
-      width: 16.8125rem;
-      &-title {
-        @include font($fs-18, 400, 166.667%);
-        letter-spacing: 0.0225rem;
-      }
-      &-descr {
-        @include font($fs-48, 700);
-      }
     }
   }
 }
@@ -235,6 +199,20 @@
   display: none;
   background-image: url("../img/invest/supporters/bg_card-fb-messenger.webp");
   border: 1px solid rgba(162, 52, 253, 0.2);
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+.company__add-button {
+  display: flex;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.supporters__button-primary {
+  display: none;
   @media screen and (min-width: 768px) {
     display: flex;
   }

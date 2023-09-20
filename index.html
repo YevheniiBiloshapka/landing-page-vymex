@@ -11,12 +11,7 @@
       type="image/x-icon"
       href="./images/favicon_io/favicon.ico"
     /> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -33,11 +28,13 @@
       <!-- block 1 hero-->
       <section class="hero">
         <div class="container">
-          <h1 class="hero__title">Все только начинается.</h1>
-          <p class="hero__txt">Посмотрите на YouTube</p>
-          <h2 class="title hero__subtitle">Что такое Vymex?</h2>
-          <div class="hero__video">
-            <button class="hero__video-button" data-modal-open>
+          <h1 class="hero__title bf">
+            <span>Все</span> <span>только</span> <span>начинается.</span>
+          </h1>
+          <p class="hero__txt fade-left">Посмотрите на YouTube</p>
+          <h2 class="title hero__subtitle fade-right">Что такое Vymex?</h2>
+          <div class="hero__video bf">
+            <button class="hero__video-button play-video" data-modal-open>
               <svg
                 width="16"
                 height="18"
@@ -59,11 +56,11 @@
       <!-- block 2 solution -->
       <section class="solution container">
         <div class="solution__first">
-          <h2 class="solution__first-title">
+          <h2 class="solution__first-title to-top">
             Vymex создал решение, которое полностью изменит среду, разделив нишу
             «ПО для бизнеса» на:
           </h2>
-          <div class="solution__first-box">
+          <div class="solution__first-box fade-in">
             <p class="solution__first-txt">
               Системы управления базовыми потребностями
             </p>
@@ -73,7 +70,11 @@
           </div>
         </div>
 
-        <div class="solution__second">
+        <div
+          class="solution__second fade-right"
+          data-animation="fade-right"
+          data-delay="800"
+        >
           <p>
             Новая ниша, размером $192 млрд годового дохода, повысит
             эффективность работы бизнеса и значительно снизит показатель
@@ -524,7 +525,9 @@
           <ul class="benefits__list">
             <!--rows -->
             <li class="benefits__list-item">
-              <h4 class="benefits__list-item-title">Користувач</h4>
+              <div class="benefits__list-item-title-box">
+                <h4 class="benefits__list-item-title">Користувач</h4>
+              </div>
               <!--column -->
               <ul class="benefits__descr--list">
                 <li class="benefits__descr--item">
@@ -583,7 +586,9 @@
             </li>
             <!--rows -->
             <li class="benefits__list-item">
-              <h4 class="benefits__list-item-title">vCo-f</h4>
+              <div class="benefits__list-item-title-box">
+                <h4 class="benefits__list-item-title">vCo-f</h4>
+              </div>
               <!--column -->
               <ul class="benefits__descr--list">
                 <li class="benefits__descr--item">
@@ -620,7 +625,9 @@
             </li>
             <!--rows -->
             <li class="benefits__list-item">
-              <h4 class="benefits__list-item-title">vHub</h4>
+              <div class="benefits__list-item-title-box">
+                <h4 class="benefits__list-item-title">vHub</h4>
+              </div>
               <!--column -->
               <ul class="benefits__descr--list">
                 <li class="benefits__descr--item">
@@ -651,7 +658,9 @@
             </li>
             <!--rows -->
             <li class="benefits__list-item">
-              <h4 class="benefits__list-item-title">vRise</h4>
+              <div class="benefits__list-item-title-box">
+                <h4 class="benefits__list-item-title">vRise</h4>
+              </div>
               <!--column -->
               <ul class="benefits__descr--list">
                 <li class="benefits__descr--item">
@@ -667,7 +676,9 @@
               </ul>
             </li>
             <li class="benefits__list-item">
-              <h4 class="benefits__list-item-title">vRise</h4>
+              <div class="benefits__list-item-title-box">
+                <h4 class="benefits__list-item-title">vRise</h4>
+              </div>
               <!--column -->
               <ul class="benefits__descr--list">
                 <li class="benefits__descr--item">
@@ -694,24 +705,16 @@
             <h2 class="supporters-info-title">
               Компании, что ожидают выхода продуктов
             </h2>
-            <p class="supporters-info-registered">Зарегистрировано в Beta:</p>
-            <ul class="beta-stats">
-              <li class="beta-stats__item">
-                <h4 class="beta-stats__item-title">Пользователей</h4>
-                <p class="beta-stats__item-descr">675</p>
-              </li>
-              <li class="beta-stats__item">
-                <h4 class="beta-stats__item-title">Компаний</h4>
-                <p class="beta-stats__item-descr">347</p>
-              </li>
-            </ul>
+            <button class="button-primary supporters__button-primary">
+              Добавить свою компанию в список
+            </button>
           </div>
           <p class="supporters-description">
-            Много компаний, для кого Ваймекс предоставлял консалтинг на ранних
-            стадиях разработки прототипов по 2021 год. Есть компании, что
-            понимают, какие продукты создаются и какое влияние это произведет на
-            среду. Добавление компаний в данный список это простая демонстрация
-            намерений и поддержка Ваймекс.
+            Ваймекс разрабатывает решение одной из самых больших проблем в
+            бизнес среде и нам важна поддержка от нашей целевой на всех стадиях
+            реализации. Компании, что понимают наши решения и продукты,
+            добавляясь в данный список показывают намерения в будущем
+            становиться нашими пользователями, что показывает нам.
           </p>
         </div>
 
@@ -945,7 +948,9 @@
     <script src="https://cdn.jsdelivr.net/npm/clientjs@0.1.11/dist/client.min.js"></script>
 
     <script src="./js/loading-bar/loading-bar.js"></script>
+    <script type="module" src="./js/animations/followButton.js"></script>
     <script type="text/javascript" src="./js/modal.js"></script>
     <script type="text/javascript" src="./js/calculator/calculator.js"></script>
+    <script type="text/javascript" src="./js/animations/animations.js"></script>
   </body>
 </html>

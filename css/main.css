@@ -589,7 +589,12 @@ body::-webkit-scrollbar {
   width: 100%;
   overflow: auto;
   height: 100%;
-  max-height: 30.5rem;
+  max-height: 26.5rem;
+}
+@media screen and (min-width: 1200px) {
+  .vm-calc .work-area {
+    max-height: 30.5rem;
+  }
 }
 .vm-calc .work-area::-webkit-scrollbar {
   width: 1em;

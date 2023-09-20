@@ -1,0 +1,37 @@
+{
+  "selectedCash": 22500,
+  "selectedPercent": 0.25,
+  "totalAmountCash": 1600000,
+  "totalAmountPercent": 4.0,
+  "dividends": 6492820,
+  "costBy2030": 73163022,
+
+  "columns": [
+    {
+      "id": 1,
+      "title": "Доля из раунда Pre-seed",
+      "info": {
+        "date": "2023 год",
+        "salePercent": 5.5,
+        "pricePerVolume": 775000
+      },
+      "positions": [
+        { "id": 1, "cash": 77500, "percent": 5.95, "status": "reserv" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "После выхода коммерческой версии",
+      "info": {
+        "date": "Январь 2024",
+        "salePercent": 4.0,
+        "pricePerVolume": 1600000
+      },
+      "positions": [
+        { "id": 1, "cash": 800000, "percent": 2, "status": "sale" },
+        { "id": 2, "cash": 400000, "percent": 1, "status": "sale" },
+        { "id": 3, "cash": 400000, "percent": 1, "status": "sale" }
+      ]
+    }
+  ]
+}

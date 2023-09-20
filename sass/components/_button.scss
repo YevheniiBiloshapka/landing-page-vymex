@@ -47,3 +47,18 @@
   transition: 0.3s;
   border: none;
 }
+
+.button-primary {
+  background: #1890ff;
+  border: 0;
+  border-radius: 30px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 16px 30px;
+  text-align: center;
+  transition: 0.2s;
+}

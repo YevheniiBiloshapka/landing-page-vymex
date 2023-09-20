@@ -1961,6 +1961,8 @@ body::-webkit-scrollbar {
   max-width: 18.75rem;
 }
 .benefits__list-item-title {
+  position: sticky;
+  top: 0;
   color: #c1cfdb;
   font-size: 0.875rem;
   font-weight: 700;

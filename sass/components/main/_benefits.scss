@@ -74,6 +74,8 @@
   min-width: 18.75rem;
   max-width: 18.75rem;
   &-title {
+    position: sticky;
+    top: 0;
     color: $cl-text-secondary;
     @include font($fs-14, 700);
     text-align: center;

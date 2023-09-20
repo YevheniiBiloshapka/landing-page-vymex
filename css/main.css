@@ -769,6 +769,10 @@ body::-webkit-scrollbar {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+.button-primary:hover {
+  background: #0077e5;
+  color: #bae7ff;
+}
 
 .follow-button {
   -webkit-transition: -webkit-transform 0.3s ease;

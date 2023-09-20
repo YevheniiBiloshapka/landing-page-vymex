@@ -61,6 +61,10 @@
   padding: 16px 30px;
   text-align: center;
   transition: 0.2s;
+  &:hover {
+    background: $cl-primary-dark;
+    color: #bae7ff;
+  }
 }
 
 .follow-button {

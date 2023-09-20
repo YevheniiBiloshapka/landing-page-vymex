@@ -1,0 +1,432 @@
+{% set main = get_field('main_screen', page.template.id) %}
+{% set calc = get_field('calc_intro', page.template.id) %}
+{% set digits = get_field('vm_digits', page.template.id) %}
+{% set goals = get_invest_goals() %}
+{% set importance = get_field('importance', page.template.id) %}
+{% set additional = get_field('additional', page.template.id) %}
+{% set f_form = get_field('footer_form', page.template.id) %}
+
+<main class="template-{{ page.template.slug }}">
+    <div class="main-screen vm-tac">
+        <div class="container">
+            <picture class="light">
+                <source srcset="{{ asset('img/invest/light.svg') }}" media="(max-width: 567px)">
+                <img src="{{ asset('img/invest/light.svg') }}" alt="" class="light">
+            </picture>
+
+            <div class="row">
+                <div class="col-xl-12">
+                    <h2 class="heading-smallest b2-anim vm-mb-26" data-delay="700"
+                        data-animation="fade-up">{{ main.text_before }}</h2>
+                    <h1 class="heading-biggest page-title vm-t-white b2-anim" data-animation="bf" data-delay="">
+                        {{ main.heading }}
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-img vm-mb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <picture>
+                            <source srcset="{{ asset('img/optimized/invest/main-m_'~app.request.locale~'.png') }}"
+                                    media="(max-width: 567px)">
+                            <source srcset="{{ asset('img/optimized/invest/main-m_'~app.request.locale~'.webp') }}"
+                                    media="(max-width: 567px)">
+                            <source srcset="{{ asset('img/optimized/invest/main_'~app.request.locale~'.webp') }}">
+                            <img src="{{ asset('img/optimized/invest/main_'~app.request.locale~'.png') }}" alt="">
+                        </picture>
+                        <div class="cards">
+                            <div class="card b2-anim" data-animation="fade-up" data-delay="200">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.7181 21C8.32156 21.0007 7.92976 20.9123 7.57068 20.7412C7.2116 20.5702 6.8941 20.3206 6.64085 20.0104L4.26954 16.9456C4.16958 16.8224 4.09484 16.6801 4.04971 16.5271C4.00458 16.3741 3.98997 16.2135 4.00674 16.0547C4.02351 15.8959 4.07131 15.7421 4.14736 15.6023C4.2234 15.4626 4.32614 15.3397 4.44955 15.2408C4.57296 15.142 4.71455 15.0692 4.866 15.0268C5.01746 14.9843 5.17573 14.9731 5.33151 14.9937C5.4873 15.0143 5.63747 15.0663 5.77321 15.1468C5.90894 15.2272 6.0275 15.3344 6.12193 15.462L8.48066 18.4996C8.50856 18.5384 8.54668 18.5685 8.59063 18.5863C8.63457 18.6041 8.68257 18.609 8.72911 18.6003C8.7805 18.6003 8.83123 18.5886 8.87752 18.5659C8.92381 18.5432 8.96446 18.5101 8.99643 18.4692L17.6404 7.46201C17.7363 7.33686 17.8557 7.23231 17.9917 7.15442C18.1276 7.07653 18.2774 7.02685 18.4324 7.00826C18.5874 6.98967 18.7445 7.00253 18.8946 7.04611C19.0446 7.08969 19.1847 7.16311 19.3066 7.26212C19.4286 7.36114 19.53 7.48377 19.6049 7.62292C19.6799 7.76207 19.727 7.91496 19.7434 8.07275C19.7599 8.23053 19.7453 8.39006 19.7007 8.54209C19.6561 8.69412 19.5822 8.83563 19.4833 8.95842L10.8237 19.9768C10.572 20.2945 10.2538 20.5512 9.89232 20.7282C9.53082 20.9052 9.13506 20.998 8.73383 21H8.7181Z"
+                                              fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    {{ 'invest.card.1'|trans }}
+                                </div>
+                            </div>
+                            <div class="card b2-anim" data-animation="fade-up" data-delay="600">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.7181 21C8.32156 21.0007 7.92976 20.9123 7.57068 20.7412C7.2116 20.5702 6.8941 20.3206 6.64085 20.0104L4.26954 16.9456C4.16958 16.8224 4.09484 16.6801 4.04971 16.5271C4.00458 16.3741 3.98997 16.2135 4.00674 16.0547C4.02351 15.8959 4.07131 15.7421 4.14736 15.6023C4.2234 15.4626 4.32614 15.3397 4.44955 15.2408C4.57296 15.142 4.71455 15.0692 4.866 15.0268C5.01746 14.9843 5.17573 14.9731 5.33151 14.9937C5.4873 15.0143 5.63747 15.0663 5.77321 15.1468C5.90894 15.2272 6.0275 15.3344 6.12193 15.462L8.48066 18.4996C8.50856 18.5384 8.54668 18.5685 8.59063 18.5863C8.63457 18.6041 8.68257 18.609 8.72911 18.6003C8.7805 18.6003 8.83123 18.5886 8.87752 18.5659C8.92381 18.5432 8.96446 18.5101 8.99643 18.4692L17.6404 7.46201C17.7363 7.33686 17.8557 7.23231 17.9917 7.15442C18.1276 7.07653 18.2774 7.02685 18.4324 7.00826C18.5874 6.98967 18.7445 7.00253 18.8946 7.04611C19.0446 7.08969 19.1847 7.16311 19.3066 7.26212C19.4286 7.36114 19.53 7.48377 19.6049 7.62292C19.6799 7.76207 19.727 7.91496 19.7434 8.07275C19.7599 8.23053 19.7453 8.39006 19.7007 8.54209C19.6561 8.69412 19.5822 8.83563 19.4833 8.95842L10.8237 19.9768C10.572 20.2945 10.2538 20.5512 9.89232 20.7282C9.53082 20.9052 9.13506 20.998 8.73383 21H8.7181Z"
+                                              fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    {{ 'invest.card.2'|trans }}
+                                </div>
+                            </div>
+                            <div class="card b2-anim" data-animation="fade-up" data-delay="1000">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.7181 21C8.32156 21.0007 7.92976 20.9123 7.57068 20.7412C7.2116 20.5702 6.8941 20.3206 6.64085 20.0104L4.26954 16.9456C4.16958 16.8224 4.09484 16.6801 4.04971 16.5271C4.00458 16.3741 3.98997 16.2135 4.00674 16.0547C4.02351 15.8959 4.07131 15.7421 4.14736 15.6023C4.2234 15.4626 4.32614 15.3397 4.44955 15.2408C4.57296 15.142 4.71455 15.0692 4.866 15.0268C5.01746 14.9843 5.17573 14.9731 5.33151 14.9937C5.4873 15.0143 5.63747 15.0663 5.77321 15.1468C5.90894 15.2272 6.0275 15.3344 6.12193 15.462L8.48066 18.4996C8.50856 18.5384 8.54668 18.5685 8.59063 18.5863C8.63457 18.6041 8.68257 18.609 8.72911 18.6003C8.7805 18.6003 8.83123 18.5886 8.87752 18.5659C8.92381 18.5432 8.96446 18.5101 8.99643 18.4692L17.6404 7.46201C17.7363 7.33686 17.8557 7.23231 17.9917 7.15442C18.1276 7.07653 18.2774 7.02685 18.4324 7.00826C18.5874 6.98967 18.7445 7.00253 18.8946 7.04611C19.0446 7.08969 19.1847 7.16311 19.3066 7.26212C19.4286 7.36114 19.53 7.48377 19.6049 7.62292C19.6799 7.76207 19.727 7.91496 19.7434 8.07275C19.7599 8.23053 19.7453 8.39006 19.7007 8.54209C19.6561 8.69412 19.5822 8.83563 19.4833 8.95842L10.8237 19.9768C10.572 20.2945 10.2538 20.5512 9.89232 20.7282C9.53082 20.9052 9.13506 20.998 8.73383 21H8.7181Z"
+                                              fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    {{ 'invest.card.3'|trans }}
+                                </div>
+                            </div>
+                            <div class="card b2-anim" data-animation="fade-up" data-delay="1400">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.7181 21C8.32156 21.0007 7.92976 20.9123 7.57068 20.7412C7.2116 20.5702 6.8941 20.3206 6.64085 20.0104L4.26954 16.9456C4.16958 16.8224 4.09484 16.6801 4.04971 16.5271C4.00458 16.3741 3.98997 16.2135 4.00674 16.0547C4.02351 15.8959 4.07131 15.7421 4.14736 15.6023C4.2234 15.4626 4.32614 15.3397 4.44955 15.2408C4.57296 15.142 4.71455 15.0692 4.866 15.0268C5.01746 14.9843 5.17573 14.9731 5.33151 14.9937C5.4873 15.0143 5.63747 15.0663 5.77321 15.1468C5.90894 15.2272 6.0275 15.3344 6.12193 15.462L8.48066 18.4996C8.50856 18.5384 8.54668 18.5685 8.59063 18.5863C8.63457 18.6041 8.68257 18.609 8.72911 18.6003C8.7805 18.6003 8.83123 18.5886 8.87752 18.5659C8.92381 18.5432 8.96446 18.5101 8.99643 18.4692L17.6404 7.46201C17.7363 7.33686 17.8557 7.23231 17.9917 7.15442C18.1276 7.07653 18.2774 7.02685 18.4324 7.00826C18.5874 6.98967 18.7445 7.00253 18.8946 7.04611C19.0446 7.08969 19.1847 7.16311 19.3066 7.26212C19.4286 7.36114 19.53 7.48377 19.6049 7.62292C19.6799 7.76207 19.727 7.91496 19.7434 8.07275C19.7599 8.23053 19.7453 8.39006 19.7007 8.54209C19.6561 8.69412 19.5822 8.83563 19.4833 8.95842L10.8237 19.9768C10.572 20.2945 10.2538 20.5512 9.89232 20.7282C9.53082 20.9052 9.13506 20.998 8.73383 21H8.7181Z"
+                                              fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    {{ 'invest.card.4'|trans }}
+                                </div>
+                            </div>
+                            <div class="card b2-anim" data-animation="fade-up" data-delay="1200">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.7181 21C8.32156 21.0007 7.92976 20.9123 7.57068 20.7412C7.2116 20.5702 6.8941 20.3206 6.64085 20.0104L4.26954 16.9456C4.16958 16.8224 4.09484 16.6801 4.04971 16.5271C4.00458 16.3741 3.98997 16.2135 4.00674 16.0547C4.02351 15.8959 4.07131 15.7421 4.14736 15.6023C4.2234 15.4626 4.32614 15.3397 4.44955 15.2408C4.57296 15.142 4.71455 15.0692 4.866 15.0268C5.01746 14.9843 5.17573 14.9731 5.33151 14.9937C5.4873 15.0143 5.63747 15.0663 5.77321 15.1468C5.90894 15.2272 6.0275 15.3344 6.12193 15.462L8.48066 18.4996C8.50856 18.5384 8.54668 18.5685 8.59063 18.5863C8.63457 18.6041 8.68257 18.609 8.72911 18.6003C8.7805 18.6003 8.83123 18.5886 8.87752 18.5659C8.92381 18.5432 8.96446 18.5101 8.99643 18.4692L17.6404 7.46201C17.7363 7.33686 17.8557 7.23231 17.9917 7.15442C18.1276 7.07653 18.2774 7.02685 18.4324 7.00826C18.5874 6.98967 18.7445 7.00253 18.8946 7.04611C19.0446 7.08969 19.1847 7.16311 19.3066 7.26212C19.4286 7.36114 19.53 7.48377 19.6049 7.62292C19.6799 7.76207 19.727 7.91496 19.7434 8.07275C19.7599 8.23053 19.7453 8.39006 19.7007 8.54209C19.6561 8.69412 19.5822 8.83563 19.4833 8.95842L10.8237 19.9768C10.572 20.2945 10.2538 20.5512 9.89232 20.7282C9.53082 20.9052 9.13506 20.998 8.73383 21H8.7181Z"
+                                              fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    {{ 'invest.card.5'|trans }}
+                                </div>
+                            </div>
+                            <div class="card b2-anim" data-animation="fade-up" data-delay="800">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.7181 21C8.32156 21.0007 7.92976 20.9123 7.57068 20.7412C7.2116 20.5702 6.8941 20.3206 6.64085 20.0104L4.26954 16.9456C4.16958 16.8224 4.09484 16.6801 4.04971 16.5271C4.00458 16.3741 3.98997 16.2135 4.00674 16.0547C4.02351 15.8959 4.07131 15.7421 4.14736 15.6023C4.2234 15.4626 4.32614 15.3397 4.44955 15.2408C4.57296 15.142 4.71455 15.0692 4.866 15.0268C5.01746 14.9843 5.17573 14.9731 5.33151 14.9937C5.4873 15.0143 5.63747 15.0663 5.77321 15.1468C5.90894 15.2272 6.0275 15.3344 6.12193 15.462L8.48066 18.4996C8.50856 18.5384 8.54668 18.5685 8.59063 18.5863C8.63457 18.6041 8.68257 18.609 8.72911 18.6003C8.7805 18.6003 8.83123 18.5886 8.87752 18.5659C8.92381 18.5432 8.96446 18.5101 8.99643 18.4692L17.6404 7.46201C17.7363 7.33686 17.8557 7.23231 17.9917 7.15442C18.1276 7.07653 18.2774 7.02685 18.4324 7.00826C18.5874 6.98967 18.7445 7.00253 18.8946 7.04611C19.0446 7.08969 19.1847 7.16311 19.3066 7.26212C19.4286 7.36114 19.53 7.48377 19.6049 7.62292C19.6799 7.76207 19.727 7.91496 19.7434 8.07275C19.7599 8.23053 19.7453 8.39006 19.7007 8.54209C19.6561 8.69412 19.5822 8.83563 19.4833 8.95842L10.8237 19.9768C10.572 20.2945 10.2538 20.5512 9.89232 20.7282C9.53082 20.9052 9.13506 20.998 8.73383 21H8.7181Z"
+                                              fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    {{ 'invest.card.6'|trans }}
+                                </div>
+                            </div>
+                            <div class="card b2-anim" data-animation="fade-up" data-delay="400">
+                                <div class="icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.7181 21C8.32156 21.0007 7.92976 20.9123 7.57068 20.7412C7.2116 20.5702 6.8941 20.3206 6.64085 20.0104L4.26954 16.9456C4.16958 16.8224 4.09484 16.6801 4.04971 16.5271C4.00458 16.3741 3.98997 16.2135 4.00674 16.0547C4.02351 15.8959 4.07131 15.7421 4.14736 15.6023C4.2234 15.4626 4.32614 15.3397 4.44955 15.2408C4.57296 15.142 4.71455 15.0692 4.866 15.0268C5.01746 14.9843 5.17573 14.9731 5.33151 14.9937C5.4873 15.0143 5.63747 15.0663 5.77321 15.1468C5.90894 15.2272 6.0275 15.3344 6.12193 15.462L8.48066 18.4996C8.50856 18.5384 8.54668 18.5685 8.59063 18.5863C8.63457 18.6041 8.68257 18.609 8.72911 18.6003C8.7805 18.6003 8.83123 18.5886 8.87752 18.5659C8.92381 18.5432 8.96446 18.5101 8.99643 18.4692L17.6404 7.46201C17.7363 7.33686 17.8557 7.23231 17.9917 7.15442C18.1276 7.07653 18.2774 7.02685 18.4324 7.00826C18.5874 6.98967 18.7445 7.00253 18.8946 7.04611C19.0446 7.08969 19.1847 7.16311 19.3066 7.26212C19.4286 7.36114 19.53 7.48377 19.6049 7.62292C19.6799 7.76207 19.727 7.91496 19.7434 8.07275C19.7599 8.23053 19.7453 8.39006 19.7007 8.54209C19.6561 8.69412 19.5822 8.83563 19.4833 8.95842L10.8237 19.9768C10.572 20.2945 10.2538 20.5512 9.89232 20.7282C9.53082 20.9052 9.13506 20.998 8.73383 21H8.7181Z"
+                                              fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="text">
+                                    {{ 'invest.card.7'|trans }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container vm-tac">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="{{ get_field('pres_link', page.template.id) }}" target="_blank" class="vm-button">{{ 'button.presentation'|trans }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="calculator">
+        <div class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-7">
+                        <h2 class="heading-big vm-t-white calc-title">
+                            <span class="mask"><span class="b2-anim"
+                                                     data-animation="to-top">{{ calc.heading }}</span></span>
+                        </h2>
+                        <div class="button-container">
+                            <button class="button button-clb button-primary b2-anim" data-animation="fade-in"
+                                    data-editable-button="7" data-cid="2" data-delay="800"
+                                    data-btn="Подробнее о проекте"
+                                    data-event="invest_details" data-clb="true">{{ get_button_text(7) }}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-12">
+                        <div class="side-text b2-anim" data-animation="fade-right" data-delay="800">
+                            <div class="vm-text vm-l-gray">
+                                {{ print_content(calc.text) | raw }}
+                            </div>
+                        </div>
+                        <div class="label-container" data-editable-button="18">
+                            <span class="label">{{ get_button_text(18) }}</span>
+                            <span class="label-arrow"><img src="{{ asset('img/label-arrow.svg') }}" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="vm-calc">
+                <div class="mob-nav">
+                    <div class="tab active" data-tab="1">{% trans %}calc.tab.table{% endtrans %}</div>
+                    <div class="tab" data-tab="2">{% trans %}calc.tab.result{% endtrans %} <span
+                                class="pos-counter"></span></div>
+                    <div class="tab" data-tab="3">{% trans %}calc.tab.description{% endtrans %}</div>
+                </div>
+                <div class="sidebar" data-tab="3">
+                    <div class="sidebar__body">
+                        <div class="sidebar__caption">
+                            {% trans %}calc.instruction.caption{% endtrans %}
+                        </div>
+                        <div class="sidebar__instruction">
+                            {% trans %}calc.instruction.text{% endtrans %}
+                        </div>
+                        <div class="pick-bar hidden" data-tab="2">
+                            <div class="selected-items">
+
+                            </div>
+                            <div class="sidebar__total">
+                                <div class="sidebar__label">{% trans %}calc.label.total{% endtrans %}</div>
+                                <div class="total__values">
+                                    <div class="cash value">
+                                        -
+                                    </div>
+                                    <div class="percents value">
+                                        -
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="results">
+                                <div class="sidebar__label">
+                                    {% trans %}calc.label.result{% endtrans %}
+                                </div>
+                                <div class="result__row">
+                                    <div class="result__label">{% trans %}calc.label.cost{% endtrans %}</div>
+                                    <div class="result__value end-total-cost">-</div>
+                                </div>
+                                <div class="result__row">
+                                    <div class="result__label">{% trans %}calc.label.dividends{% endtrans %}</div>
+                                    <div class="result__value dividends">-</div>
+                                </div>
+                            </div>
+                            <div class="button">
+                                <button class="button-primary -tall" data-cid="2" data-editable-button="19"
+                                        data-btn="Узнать условия инвестирования"
+                                        data-event="invest_invest" data-clb="true">{{ get_button_text(19) }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar__footer">
+                        <p class="instructions">{% trans %}calc.footer.text1{% endtrans %}</p>
+                        <p class="warning">{% trans %}calc.footer.text2{% endtrans %}</p>
+                    </div>
+                </div>
+                <div class="window active" data-tab="1">
+                    <div class="work-area">
+                        {% for year in get_positions() %}
+                            <div class="year-column">
+                                <div class="year-label">{{ year.label }}</div>
+                                <div class="month-columns">
+                                    {% for month in year.shareMonths %}
+                                        <div class="month">
+                                            <div class="meta">
+                                                <div class="month-name">{{ month.translate.label | trans }}</div>
+                                                <div class="stats">
+                                                    <div class="stat">
+                                                        <div class="stat__label">{% trans %}calc.label.in_sale{% endtrans %}</div>
+                                                        <div class="stat__value">
+                                                            {% set sum = 0 %}
+                                                            {% for position in month.sharePositions %}
+                                                                {% set sum = sum + position.size %}
+                                                            {% endfor %}
+                                                            {{ sum }}%
+                                                        </div>
+                                                    </div>
+                                                    <div class="stat">
+                                                        <div class="stat__label">{% trans %}calc.label.price_for_percent{% endtrans %}</div>
+                                                        <div class="stat__value">$ {{ month.price }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="positions">
+                                                {% for position in month.sharePositions %}
+                                                    <div class="position -{{ position.status.value | lower }}"
+                                                         data-position="{{ position.id }}">
+                                                        <div class="value">
+                                                            <span class="cash">$ {{ position.price }}</span> / <span
+                                                                    class="percent">{{ position.size }}%</span>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="note-area">
+                        <div class="area-label">{% trans %}calc.label.status{% endtrans %}</div>
+                        <div class="state">
+                            <div class="state__color -gray"></div>
+                            <div class="state__label">{% trans %}calc.label.sold{% endtrans %}</div>
+                        </div>
+                        <div class="state">
+                            <div class="state__color -yellow"></div>
+                            <div class="state__label">{% trans %}calc.label.booked{% endtrans %}</div>
+                        </div>
+                        <div class="state">
+                            <div class="state__color -blue"></div>
+                            <div class="state__label">{% trans %}calc.label.available{% endtrans %}</div>
+                        </div>
+                        <div class="state">
+                            <div class="state__color -dark-blue"></div>
+                            <div class="state__label">{% trans %}calc.label.selected{% endtrans %}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rtb-desktop vm-section-margin-m">
+        <div class="container">
+            <div class="row heading-row">
+                <div class="col-12">
+                    <h2 class="heading-big vm-tac vm-t-white">{{ digits.heading }}</h2>
+                </div>
+            </div>
+
+            <div class="row mb-25 invest-row">
+                <div class="col-lg-6 col-md-6 col-sm-6 invest-col">
+                    <div class="investments smooth -blue b2-anim" data-animation="ib1" data-delay="200">
+                        <div class="achieved block-heading">
+                            <div class="value">${{ goals.achievedMoney | number_format(0, ' ', ' ') }}</div>
+                            <div class="label">{{ digits.block3_text }}</div>
+                        </div>
+                        <div class="bought block-stats">
+                            <div class="status-ring counter-1" data-preset="circle"
+                                 data-stroke-width="20"
+                                 data-bar-value="{{ goals.soldShares | replace({'%': '' }) }}"
+                                 style="width: 50px; height: 50px;">
+                            </div>
+                            <div class="label">{{ digits.block1_text }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 invest-col">
+                    <div class="investments smooth -green b2-anim" data-animation="ib1" data-delay="400">
+                        <div class="invest-goal block-heading">
+                            <div class="value">${{ goals.moneyGoal | number_format(0, ' ', ' ') }}</div>
+                            <div class="label">{{ digits.block4_text }}</div>
+                        </div>
+                        <div class="goal block-stats">
+                            <div class="status-ring -green counter-2" data-preset="circle"
+                                 data-stroke-width="20"
+                                 data-bar-value="{{ goals.sharesGoal | replace({'%': '' }) }}"
+                                 style="width: 50px; height: 50px;">
+                            </div>
+                            <div class="label">{{ digits.block2_text }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row vm-mb-30 preidction-row">
+                <div class="col-lg-6 col-md-6 col-sm-6 invest-col">
+                    <div class="prediction smooth b2-anim" data-animation="fade-up" data-delay="200">
+                        <div class="value">{{ digits.block5_digits }}</div>
+                        <div class="label">{{ digits.block5_text }}</div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="income smooth b2-anim" data-animation="fade-up" data-delay="400">
+                        <div class="value">{{ digits.block6_digits }}</div>
+                        <div class="label">{{ digits.block6_text }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row button-row vm-mb-60">
+                <div class="col-12 vm-tac">
+                    <button data-clb="true" data-cid="2" data-editable-button="31" data-btn="Запрос на фин. модель"
+                            class="vm-button start">
+                        {{ get_button_text(31) }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {#    {% include 'front/chunks/roadmap.html.twig' %}#}
+
+    <div class="who-cares vm-tac vm-section-margin">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="vm-heading-xxl vm-mb-40 vm-mobile-mb-20">
+                        {{ print_content(importance.heading) | raw }}
+                    </h2>
+
+                    <p class="vm-text vm-d-gray vm-mb-60 vm-mobile-mb-40">
+                        {{ importance.subheading }}
+                    </p>
+
+                    <p class="vm-text main-text">
+                        {{ importance.text | raw }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if get_reviews() is not empty %}
+        {% include 'front/chunks/reviews-v2.html.twig' %}
+    {% endif %}
+
+    <div class="additional-info vm-section-margin vm-section-margin-m">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="block --{{ app.request.locale }}">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-12 offset-xl-1">
+                                <div class="vm-heading-lg vm-mb-30">
+                                    {{ additional.heading | raw }}
+                                </div>
+
+                                <div class="vm-text vm-mb-30">
+                                    {{ additional.text | raw }}
+                                </div>
+
+                                <div class="vm-check-list-style">
+                                    {{ print_content(additional.list) | raw }}
+                                </div>
+
+                                <a href="" data-clb="true" data-cid="2" data-btn="Договориться о встрече"
+                                   data-editable-button="30" class="vm-button">{{ get_button_text(30) }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="span" aria-hidden="true" style="visibility: hidden; display: none"
+         data-tym="{{ 'tym.text.default'|trans }}"></div>
+    {% include 'front/main/modal.html.twig' %}
+    {% include 'front/chunks/cta.html.twig' with {'event': 'invest_footer', 'f_form': f_form} %}
+</main>
+
+<script>
+    fbq('track', 'ViewContentProduct4');
+</script>

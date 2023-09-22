@@ -459,19 +459,16 @@
     }
 
     .state__label {
-      font-weight: bold;
       color: #ffffff;
-      @include font($fs-14, 500);
-      line-height: 17px;
+      @include font($fs-14, 500, 17px);
       letter-spacing: 0.02em;
-
-      letter-spacing: 0.0175rem;
     }
 
     .state__color {
       width: 18px;
       height: 18px;
-      border-radius: 50%;
+      text-wrap: nowrap;
+      border-radius: $br-200;
       margin-right: 10px;
 
       &.-gray {

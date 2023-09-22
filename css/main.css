@@ -1322,19 +1322,17 @@ body::-webkit-scrollbar {
   margin-right: 16px;
 }
 .vm-calc .note-area .state__label {
-  font-weight: bold;
   color: #ffffff;
   font-size: 0.875rem;
   font-weight: 500;
-  line-height: normal;
   line-height: 17px;
   letter-spacing: 0.02em;
-  letter-spacing: 0.0175rem;
 }
 .vm-calc .note-area .state__color {
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  text-wrap: nowrap;
+  border-radius: 12.5rem;
   margin-right: 10px;
 }
 .vm-calc .note-area .state__color.-gray {
@@ -2972,6 +2970,7 @@ body::-webkit-scrollbar {
 .roadmap-bg-mobile {
   background-image: url("../img/invest/roadmap/roadmap__bg-tablet.webp");
   background-repeat: no-repeat;
+  z-index: 3;
   background-size: 48.9375rem;
   background-position: 44% 19%;
 }
@@ -3490,6 +3489,7 @@ body::-webkit-scrollbar {
 
 .wartime {
   position: relative;
+  z-index: -2;
   margin-bottom: 5.67rem;
 }
 .wartime__wrapper {
